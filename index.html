@@ -9,1162 +9,702 @@
 
     <title>Moemen Brinsi | Official Website</title>
 
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M897NTWDS5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-M897NTWDS5');
+    </script>
+
     <style>
 
-        /* ================= VARIABLES ================= */
-
-        :root {
-
-            --bg: #080b12;
-            --bg2: #0f172a;
-            --card: #111827;
-            --text: #ffffff;
-            --muted: #aeb8c7;
-            --primary: #38bdf8;
-            --border: #1f2937;
-            --nav: rgba(8, 11, 18, 0.92);
-
-        }
-
-
-        body.light {
-
-            --bg: #f4f7fb;
-            --bg2: #ffffff;
-            --card: #ffffff;
-            --text: #111827;
-            --muted: #64748b;
-            --primary: #0284c7;
-            --border: #dbe3ec;
-            --nav: rgba(255, 255, 255, 0.92);
-
-        }
-
-
-        /* ================= GENERAL ================= */
-
         * {
-
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-
             scroll-behavior: smooth;
-
         }
 
+        :root {
+            --bg: #0b0f19;
+            --bg2: #111827;
+            --card: #151c2b;
+            --text: #ffffff;
+            --text2: #aab3c5;
+            --main: #5865f2;
+            --main2: #7c3aed;
+            --border: rgba(255,255,255,0.08);
+        }
+
+        body.light {
+            --bg: #f5f7fb;
+            --bg2: #ffffff;
+            --card: #ffffff;
+            --text: #111827;
+            --text2: #5b6475;
+            --border: rgba(0,0,0,0.08);
+        }
 
         body {
-
-            font-family: Arial, sans-serif;
-
+            font-family: Arial, Helvetica, sans-serif;
             background: var(--bg);
-
             color: var(--text);
-
-            transition:
-                background 0.4s,
-                color 0.4s;
-
+            line-height: 1.6;
+            transition: 0.3s;
         }
 
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-        /* ================= NAVBAR ================= */
+        /* NAVBAR */
 
         nav {
-
             position: fixed;
-
             top: 0;
-
+            left: 0;
             width: 100%;
-
-            padding: 18px 7%;
-
+            height: 70px;
             display: flex;
-
             justify-content: space-between;
-
             align-items: center;
-
-            background: var(--nav);
-
-            backdrop-filter: blur(15px);
-
+            padding: 0 7%;
+            background: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
-
             z-index: 1000;
-
         }
 
-
-        nav h2 {
-
-            color: var(--primary);
-
-            letter-spacing: 1px;
-
+        body.light nav {
+            background: rgba(255,255,255,0.85);
         }
 
-
-        nav .links {
-
-            display: flex;
-
-            align-items: center;
-
-        }
-
-
-        nav a {
-
-            color: var(--text);
-
-            text-decoration: none;
-
-            margin-left: 22px;
-
-            transition: 0.3s;
-
-        }
-
-
-        nav a:hover {
-
-            color: var(--primary);
-
-        }
-
-
-        /* ================= THEME BUTTON ================= */
-
-        #themeButton {
-
-            border: 1px solid var(--border);
-
-            background: var(--card);
-
-            color: var(--text);
-
-            width: 42px;
-
-            height: 42px;
-
-            border-radius: 50%;
-
-            cursor: pointer;
-
-            margin-left: 20px;
-
-            font-size: 18px;
-
-            transition: 0.3s;
-
-        }
-
-
-        #themeButton:hover {
-
-            transform: rotate(20deg) scale(1.08);
-
-            border-color: var(--primary);
-
-        }
-
-
-        /* ================= MOBILE MENU ================= */
-
-        .menu-button {
-
-            display: none;
-
-            background: transparent;
-
-            border: none;
-
-            color: var(--text);
-
-            font-size: 28px;
-
-            cursor: pointer;
-
-        }
-
-
-        /* ================= HOME ================= */
-
-        .home {
-
-            min-height: 100vh;
-
-            display: flex;
-
-            justify-content: center;
-
-            align-items: center;
-
-            text-align: center;
-
-            padding: 120px 20px 60px;
-
-            background:
-
-                radial-gradient(
-
-                    circle at top,
-
-                    #172554,
-
-                    var(--bg) 65%
-
-                );
-
-        }
-
-
-        body.light .home {
-
-            background:
-
-                radial-gradient(
-
-                    circle at top,
-
-                    #dbeafe,
-
-                    var(--bg) 65%
-
-                );
-
-        }
-
-
-        .home-content {
-
-            animation: fadeUp 1s ease;
-
-        }
-
-
-        .tag {
-
-            display: inline-block;
-
-            padding: 9px 18px;
-
-            margin-bottom: 22px;
-
-            border: 1px solid var(--primary);
-
-            border-radius: 30px;
-
-            color: var(--primary);
-
-            font-size: 14px;
-
-        }
-
-
-        .home h1 {
-
-            font-size: 65px;
-
-            margin-bottom: 20px;
-
-        }
-
-
-        .home h1 span {
-
-            color: var(--primary);
-
-        }
-
-
-        .home h3 {
-
-            font-size: 25px;
-
-            margin-bottom: 20px;
-
-            color: var(--muted);
-
-            min-height: 30px;
-
-        }
-
-
-        .home p {
-
-            font-size: 19px;
-
-            color: var(--muted);
-
-            max-width: 700px;
-
-            margin: auto;
-
-            line-height: 1.7;
-
-        }
-
-
-        /* ================= BUTTONS ================= */
-
-        .button {
-
-            display: inline-block;
-
-            margin: 30px 8px 0;
-
-            padding: 14px 30px;
-
-            background: var(--primary);
-
-            color: white;
-
-            text-decoration: none;
-
-            border-radius: 9px;
-
+        .logo {
+            font-size: 24px;
             font-weight: bold;
+            color: var(--main);
+        }
 
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text2);
+            font-weight: 600;
             transition: 0.3s;
-
         }
 
-
-        .button:hover {
-
-            transform: translateY(-4px);
-
-            box-shadow:
-
-                0 12px 30px
-
-                rgba(56, 189, 248, 0.25);
-
+        .nav-links a:hover {
+            color: var(--main);
         }
 
-
-        .button.secondary {
-
-            background: transparent;
-
-            color: var(--primary);
-
-            border: 1px solid var(--primary);
-
+        .theme-btn {
+            border: none;
+            background: var(--card);
+            color: var(--text);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
         }
 
+        .menu-btn {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
 
-        /* ================= SECTIONS ================= */
+        /* GENERAL */
 
         section {
+            padding: 100px 8%;
+        }
 
-            padding: 110px 8%;
-
+        .section-title {
             text-align: center;
-
+            font-size: 40px;
+            margin-bottom: 50px;
         }
 
-
-        section h2 {
-
-            font-size: 42px;
-
-            margin-bottom: 20px;
-
-            color: var(--primary);
-
+        .section-title span {
+            color: var(--main);
         }
 
+        /* HERO */
 
-        .section-subtitle {
-
-            max-width: 750px;
-
-            margin: auto;
-
-            color: var(--muted);
-
-            line-height: 1.8;
-
-            font-size: 17px;
-
+        #home {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background:
+                radial-gradient(circle at top left, rgba(88,101,242,0.2), transparent 35%),
+                radial-gradient(circle at bottom right, rgba(124,58,237,0.18), transparent 35%);
         }
 
-
-        /* ================= ABOUT ================= */
-
-        .about-box {
-
+        .hero {
             max-width: 900px;
-
-            margin: 40px auto 0;
-
-            background: var(--card);
-
-            border: 1px solid var(--border);
-
-            border-radius: 20px;
-
-            padding: 40px;
-
-            transition: 0.3s;
-
         }
 
-
-        .about-box:hover {
-
-            border-color: var(--primary);
-
-            transform: translateY(-5px);
-
-        }
-
-
-        .about-box p {
-
-            color: var(--muted);
-
-            line-height: 1.9;
-
-            font-size: 17px;
-
-            margin-bottom: 18px;
-
-        }
-
-
-        .highlight {
-
-            color: var(--text);
-
+        .hero small {
+            color: var(--main);
+            font-size: 18px;
             font-weight: bold;
-
         }
 
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 85px);
+            margin: 15px 0;
+            line-height: 1.05;
+        }
 
-        /* ================= CARDS ================= */
+        .hero h1 span {
+            color: var(--main);
+        }
+
+        .typing {
+            font-size: 25px;
+            color: var(--text2);
+            min-height: 40px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: 20px auto;
+            color: var(--text2);
+            font-size: 17px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            border: 2px solid var(--main);
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--main);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(88,101,242,0.3);
+        }
+
+        .btn-outline {
+            color: var(--main);
+        }
+
+        .btn-outline:hover {
+            background: var(--main);
+            color: white;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .info-card {
+            background: var(--card);
+            padding: 30px 20px;
+            border-radius: 18px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: 0.3s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--main);
+        }
+
+        .info-card .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .info-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .info-card p {
+            color: var(--text2);
+        }
+
+        /* WHAT I DO */
 
         .cards {
-
-            display: flex;
-
-            justify-content: center;
-
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
-
-            flex-wrap: wrap;
-
-            margin-top: 45px;
-
         }
-
 
         .card {
-
             background: var(--card);
-
+            padding: 35px;
+            border-radius: 20px;
             border: 1px solid var(--border);
-
-            width: 290px;
-
-            padding: 35px 25px;
-
-            border-radius: 18px;
-
             transition: 0.3s;
-
         }
-
 
         .card:hover {
-
             transform: translateY(-8px);
-
-            border-color: var(--primary);
-
-            box-shadow:
-
-                0 15px 40px
-
-                rgba(56, 189, 248, 0.08);
-
+            border-color: var(--main);
         }
-
 
         .card-icon {
-
             font-size: 45px;
-
-            margin-bottom: 18px;
-
+            margin-bottom: 15px;
         }
-
 
         .card h3 {
-
-            margin-bottom: 15px;
-
-            font-size: 22px;
-
+            font-size: 23px;
+            margin-bottom: 10px;
         }
-
 
         .card p {
-
-            color: var(--muted);
-
-            line-height: 1.7;
-
-            font-size: 15px;
-
+            color: var(--text2);
         }
 
+        /* GAMES */
 
-        /* ================= GAMES ================= */
-
-        .games {
-
+        #games {
             background: var(--bg2);
-
         }
 
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
 
-        .game-card {
-
+        .game {
+            padding: 35px 20px;
             background: var(--card);
-
             border: 1px solid var(--border);
-
-            width: 260px;
-
-            padding: 30px 20px;
-
             border-radius: 18px;
-
+            text-align: center;
             transition: 0.3s;
-
         }
 
-
-        .game-card:hover {
-
-            transform: translateY(-8px) scale(1.02);
-
-            border-color: var(--primary);
-
+        .game:hover {
+            transform: scale(1.04);
+            border-color: var(--main);
         }
-
 
         .game-icon {
-
-            font-size: 50px;
-
+            font-size: 45px;
             margin-bottom: 15px;
-
         }
 
-
-        .game-card h3 {
-
-            margin-bottom: 10px;
-
+        .game h3 {
+            margin-bottom: 5px;
         }
 
-
-        .game-card p {
-
-            color: var(--muted);
-
-            line-height: 1.6;
-
-            font-size: 14px;
-
+        .game p {
+            color: var(--text2);
         }
 
-
-        /* ================= STATS ================= */
+        /* STATS */
 
         .stats {
-
-            background: var(--bg);
-
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
         }
 
-
-        .stat-card {
-
+        .stat {
+            text-align: center;
             background: var(--card);
-
             border: 1px solid var(--border);
-
-            width: 210px;
-
-            padding: 35px 20px;
-
+            padding: 35px 15px;
             border-radius: 18px;
-
-            transition: 0.3s;
-
         }
 
-
-        .stat-card:hover {
-
-            transform: translateY(-8px);
-
-            border-color: var(--primary);
-
+        .stat h2 {
+            color: var(--main);
+            font-size: 45px;
         }
 
-
-        .stat-number {
-
-            font-size: 42px;
-
-            font-weight: bold;
-
-            color: var(--primary);
-
-            margin-bottom: 10px;
-
+        .stat p {
+            color: var(--text2);
         }
 
-
-        .stat-title {
-
-            color: var(--muted);
-
-            font-size: 15px;
-
-        }
-
-
-        /* ================= SKILLS ================= */
+        /* SKILLS */
 
         .skills {
-
-            background: var(--bg2);
-
-        }
-
-
-        .skills-container {
-
-            max-width: 900px;
-
-            margin: 45px auto 0;
-
             display: flex;
-
             justify-content: center;
-
             flex-wrap: wrap;
-
             gap: 15px;
-
+            max-width: 900px;
+            margin: auto;
         }
-
 
         .skill {
-
-            background: var(--card);
-
-            border: 1px solid var(--border);
-
-            padding: 13px 23px;
-
+            padding: 12px 20px;
             border-radius: 30px;
-
-            color: var(--text);
-
+            background: var(--card);
+            border: 1px solid var(--border);
+            color: var(--text2);
             transition: 0.3s;
-
         }
-
 
         .skill:hover {
-
-            border-color: var(--primary);
-
-            color: var(--primary);
-
+            color: white;
+            background: var(--main);
             transform: translateY(-3px);
-
         }
 
+        /* PROJECTS */
 
-        /* ================= PROJECTS ================= */
+        #projects {
+            background: var(--bg2);
+        }
 
-        .project-card {
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
 
+        .project {
             background: var(--card);
-
-            border: 1px solid var(--border);
-
-            width: 310px;
-
-            padding: 35px 25px;
-
+            padding: 30px;
             border-radius: 18px;
-
-            transition: 0.3s;
-
+            border: 1px solid var(--border);
         }
 
-
-        .project-card:hover {
-
-            transform: translateY(-8px);
-
-            border-color: var(--primary);
-
+        .project h3 {
+            margin-bottom: 10px;
         }
 
-
-        .project-card h3 {
-
+        .project p {
+            color: var(--text2);
             margin-bottom: 15px;
-
         }
-
-
-        .project-card p {
-
-            color: var(--muted);
-
-            line-height: 1.7;
-
-            font-size: 15px;
-
-        }
-
 
         .status {
-
             display: inline-block;
-
-            margin-top: 20px;
-
-            padding: 7px 14px;
-
+            padding: 6px 12px;
             border-radius: 20px;
-
-            background: #075985;
-
-            color: #bae6fd;
-
-            font-size: 12px;
-
+            background: rgba(88,101,242,0.15);
+            color: var(--main);
+            font-size: 13px;
+            font-weight: bold;
         }
 
+        /* SOCIAL */
 
-        /* ================= CONTENT ================= */
-
-        .content-box {
-
-            max-width: 850px;
-
-            margin: 40px auto 0;
-
+        .social-box {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
             background: var(--card);
-
             border: 1px solid var(--border);
-
-            padding: 40px;
-
-            border-radius: 20px;
-
+            padding: 50px 30px;
+            border-radius: 25px;
         }
 
-
-        .content-box p {
-
-            color: var(--muted);
-
-            line-height: 1.8;
-
-            font-size: 17px;
-
+        .social-box p {
+            color: var(--text2);
+            margin-bottom: 25px;
         }
 
-
-        /* ================= CONTACT ================= */
-
-        .contact {
-
-            background: var(--bg2);
-
+        .instagram {
+            display: inline-block;
+            background: linear-gradient(45deg, #feda75, #d62976, #4f5bd5);
+            color: white;
+            padding: 13px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
         }
 
-
-        .contact-buttons {
-
-            margin-top: 20px;
-
+        .instagram:hover {
+            transform: translateY(-3px);
         }
 
+        /* CONTACT */
 
-        /* ================= FOOTER ================= */
+        .contact-container {
+            max-width: 800px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .contact-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 18px;
+            text-align: center;
+        }
+
+        .contact-card .icon {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .contact-card p {
+            color: var(--text2);
+            margin-bottom: 15px;
+        }
+
+        /* FOOTER */
 
         footer {
-
-            padding: 35px;
-
+            padding: 30px 20px;
             text-align: center;
-
-            background: var(--bg);
-
-            color: var(--muted);
-
-            border-top: 1px solid var(--border);
-
+            background: #070a11;
+            color: #8992a4;
         }
 
+        /* MOBILE */
 
-        footer span {
+        @media (max-width: 900px) {
 
-            color: var(--primary);
-
-        }
-
-
-        /* ================= ANIMATION ================= */
-
-        @keyframes fadeUp {
-
-            from {
-
-                opacity: 0;
-
-                transform: translateY(30px);
-
+            .about-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-            to {
-
-                opacity: 1;
-
-                transform: translateY(0);
-
+            .cards {
+                grid-template-columns: 1fr;
             }
 
+            .games-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
         }
 
-
-        /* ================= MOBILE ================= */
-
-        @media (max-width: 850px) {
+        @media (max-width: 650px) {
 
             nav {
-
-                padding: 15px 5%;
-
+                padding: 0 5%;
             }
 
-
-            .menu-button {
-
+            .menu-btn {
                 display: block;
-
             }
 
-
-            nav .links {
-
-                display: none;
-
+            .nav-links {
                 position: absolute;
-
                 top: 70px;
-
                 left: 0;
-
                 width: 100%;
-
-                background: var(--nav);
-
+                background: var(--bg2);
+                display: none;
                 flex-direction: column;
-
-                padding: 20px;
-
+                padding: 25px;
                 border-bottom: 1px solid var(--border);
-
             }
 
-
-            nav .links.active {
-
+            .nav-links.active {
                 display: flex;
-
             }
 
-
-            nav a {
-
-                margin: 12px 0;
-
+            .theme-btn {
+                margin-top: 10px;
             }
 
-
-            #themeButton {
-
-                margin: 10px 0 0;
-
+            section {
+                padding: 80px 5%;
             }
 
-
-            .home h1 {
-
-                font-size: 42px;
-
+            .section-title {
+                font-size: 32px;
             }
 
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
 
-            .home h3 {
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
 
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .typing {
                 font-size: 20px;
-
             }
-
-
-            .home p {
-
-                font-size: 17px;
-
-            }
-
-
-            section h2 {
-
-                font-size: 34px;
-
-            }
-
-
-            .button {
-
-                display: block;
-
-                width: fit-content;
-
-                margin: 20px auto 0;
-
-            }
-
         }
-
 
     </style>
 
 </head>
 
-
 <body>
 
-
-    <!-- ================= NAVBAR ================= -->
+    <!-- NAVBAR -->
 
     <nav>
 
-        <h2>MOEMEN BRINSI</h2>
+        <div class="logo">Moemen.</div>
 
+        <div class="menu-btn" id="menuBtn">☰</div>
 
-        <button
-            class="menu-button"
-            onclick="toggleMenu()">
-
-            ☰
-
-        </button>
-
-
-        <div class="links" id="navLinks">
+        <div class="nav-links" id="navLinks">
 
             <a href="#home">Home</a>
-
             <a href="#about">About</a>
-
             <a href="#games">Games</a>
-
             <a href="#stats">Stats</a>
-
             <a href="#projects">Projects</a>
-
             <a href="#contact">Contact</a>
 
-
-            <button
-                id="themeButton"
-                onclick="toggleTheme()">
-
-                🌙
-
-            </button>
+            <button class="theme-btn" id="themeBtn">🌙</button>
 
         </div>
 
     </nav>
 
 
+    <!-- HOME -->
 
-    <!-- ================= HOME ================= -->
+    <section id="home">
 
-    <section
-        class="home"
-        id="home">
+        <div class="hero">
 
-        <div class="home-content">
-
-            <div class="tag">
-
-                Student • Developer • Content Creator
-
-            </div>
-
+            <small>Student • Developer • Content Creator</small>
 
             <h1>
-
-                Hi, I'm
-
-                <span>
-                    Moemen Brinsi
-                </span>
-
+                Hi, I'm <span>Moemen Brinsi</span>
             </h1>
 
-
-            <h3 id="typing">
-
-                Developer
-
-            </h3>
-
+            <div class="typing">
+                I'm a <span id="typingText"></span>
+            </div>
 
             <p>
-
                 Welcome to my official website.
-
-                I'm a student who enjoys technology,
-                programming, gaming and creating content.
-
+                Here you can discover my interests, projects,
+                games and everything I'm learning.
             </p>
 
+            <div class="buttons">
 
-            <a
-                href="#about"
-                class="button">
+                <a href="#about" class="btn btn-primary">
+                    Discover More
+                </a>
 
-                Discover More
+                <a href="#contact" class="btn btn-outline">
+                    Contact Me
+                </a>
 
-            </a>
-
-
-            <a
-                href="#contact"
-                class="button secondary">
-
-                Contact Me
-
-            </a>
+            </div>
 
         </div>
 
     </section>
 
 
-
-    <!-- ================= ABOUT ================= -->
+    <!-- ABOUT -->
 
     <section id="about">
 
-        <h2>
-            About Me
+        <h2 class="section-title">
+            About <span>Me</span>
         </h2>
 
+        <div class="about-grid">
 
-        <div class="about-box">
+            <div class="info-card">
+                <div class="icon">🎓</div>
+                <h3>Student</h3>
+                <p>Learning new things every day.</p>
+            </div>
 
-            <p>
+            <div class="info-card">
+                <div class="icon">💻</div>
+                <h3>Developer</h3>
+                <p>Learning Web Development and Python.</p>
+            </div>
 
-                Hey! I'm
+            <div class="info-card">
+                <div class="icon">🎥</div>
+                <h3>Content Creator</h3>
+                <p>Creating and sharing content online.</p>
+            </div>
 
-                <span class="highlight">
-                    Moemen Brinsi
-                </span>.
-
-                I'm a student and a young developer
-                interested in technology and programming.
-
-            </p>
-
-
-            <p>
-
-                I'm also a content creator and gamer.
-
-                I enjoy discovering new games,
-                creating projects and learning new skills.
-
-            </p>
-
-
-            <p>
-
-                I'm currently learning web development
-                and Python while building my own projects.
-
-                My goal is to keep improving,
-                create useful things and share my journey online.
-
-            </p>
+            <div class="info-card">
+                <div class="icon">🎮</div>
+                <h3>Gamer</h3>
+                <p>Gaming is one of my biggest interests.</p>
+            </div>
 
         </div>
 
     </section>
 
 
-
-    <!-- ================= WHAT I DO ================= -->
+    <!-- WHAT I DO -->
 
     <section>
 
-        <h2>
-            What I Do
+        <h2 class="section-title">
+            What I <span>Do</span>
         </h2>
-
-
-        <p class="section-subtitle">
-
-            A few things I'm interested in
-            and working on.
-
-        </p>
-
 
         <div class="cards">
 
-
             <div class="card">
 
-                <div class="card-icon">
-                    💻
-                </div>
+                <div class="card-icon">💻</div>
 
-                <h3>
-                    Developer
-                </h3>
+                <h3>Developer</h3>
 
                 <p>
-
-                    Learning programming,
-                    web development and building
-                    my own projects.
-
+                    I'm learning HTML, CSS, JavaScript and Python
+                    while building my own projects.
                 </p>
 
             </div>
@@ -1172,19 +712,13 @@
 
             <div class="card">
 
-                <div class="card-icon">
-                    🎮
-                </div>
+                <div class="card-icon">🎮</div>
 
-                <h3>
-                    Gamer
-                </h3>
+                <h3>Gamer</h3>
 
                 <p>
-
-                    Playing games, improving my skills
-                    and enjoying different gaming experiences.
-
+                    I enjoy playing games such as Valorant,
+                    CS2, eFootball and open-world games.
                 </p>
 
             </div>
@@ -1192,19 +726,13 @@
 
             <div class="card">
 
-                <div class="card-icon">
-                    🎥
-                </div>
+                <div class="card-icon">🎬</div>
 
-                <h3>
-                    Content Creator
-                </h3>
+                <h3>Content Creator</h3>
 
                 <p>
-
-                    Creating content about gaming,
-                    technology and my projects.
-
+                    I'm interested in creating gaming and
+                    technology content for social media.
                 </p>
 
             </div>
@@ -1214,105 +742,38 @@
     </section>
 
 
+    <!-- GAMES -->
 
-    <!-- ================= GAMES ================= -->
+    <section id="games">
 
-    <section
-        class="games"
-        id="games">
-
-        <h2>
-            My Games
+        <h2 class="section-title">
+            Games I <span>Play</span>
         </h2>
 
+        <div class="games-grid">
 
-        <p class="section-subtitle">
-
-            Games I enjoy playing.
-
-        </p>
-
-
-        <div class="cards">
-
-
-            <div class="game-card">
-
-                <div class="game-icon">
-                    🎯
-                </div>
-
-                <h3>
-                    Valorant
-                </h3>
-
-                <p>
-
-                    Tactical FPS with agents,
-                    abilities and competitive gameplay.
-
-                </p>
-
+            <div class="game">
+                <div class="game-icon">🎯</div>
+                <h3>Valorant</h3>
+                <p>Competitive FPS</p>
             </div>
 
-
-            <div class="game-card">
-
-                <div class="game-icon">
-                    🔫
-                </div>
-
-                <h3>
-                    Counter-Strike 2
-                </h3>
-
-                <p>
-
-                    Tactical FPS focused on aim,
-                    strategy and teamwork.
-
-                </p>
-
+            <div class="game">
+                <div class="game-icon">🔫</div>
+                <h3>CS2</h3>
+                <p>Competitive Shooter</p>
             </div>
 
-
-            <div class="game-card">
-
-                <div class="game-icon">
-                    ⚽
-                </div>
-
-                <h3>
-                    eFootball
-                </h3>
-
-                <p>
-
-                    Football game where I enjoy
-                    playing matches and building my team.
-
-                </p>
-
+            <div class="game">
+                <div class="game-icon">⚽</div>
+                <h3>eFootball</h3>
+                <p>Football Game</p>
             </div>
 
-
-            <div class="game-card">
-
-                <div class="game-icon">
-                    🌎
-                </div>
-
-                <h3>
-                    Open World
-                </h3>
-
-                <p>
-
-                    I also enjoy open-world games,
-                    exploration and immersive worlds.
-
-                </p>
-
+            <div class="game">
+                <div class="game-icon">🌎</div>
+                <h3>Open World</h3>
+                <p>Exploration & Adventure</p>
             </div>
 
         </div>
@@ -1320,77 +781,34 @@
     </section>
 
 
+    <!-- STATS -->
 
-    <!-- ================= STATS ================= -->
+    <section id="stats">
 
-    <section
-        class="stats"
-        id="stats">
-
-        <h2>
-            My Stats
+        <h2 class="section-title">
+            My <span>Stats</span>
         </h2>
 
+        <div class="stats">
 
-        <p class="section-subtitle">
-
-            My current journey and interests.
-
-        </p>
-
-
-        <div class="cards">
-
-
-            <div class="stat-card">
-
-                <div class="stat-number">
-                    17
-                </div>
-
-                <div class="stat-title">
-                    Years Old
-                </div>
-
+            <div class="stat">
+                <h2>17</h2>
+                <p>Years Old</p>
             </div>
 
-
-            <div class="stat-card">
-
-                <div class="stat-number">
-                    3+
-                </div>
-
-                <div class="stat-title">
-                    Main Interests
-                </div>
-
+            <div class="stat">
+                <h2>3+</h2>
+                <p>Main Interests</p>
             </div>
 
-
-            <div class="stat-card">
-
-                <div class="stat-number">
-                    3+
-                </div>
-
-                <div class="stat-title">
-                    Games I Play
-                </div>
-
+            <div class="stat">
+                <h2>3+</h2>
+                <p>Games I Play</p>
             </div>
 
-
-            <div class="stat-card">
-
-                <div class="stat-number">
-                    ∞
-                </div>
-
-                <div class="stat-title">
-                    Ideas
-                </div>
-
+            <div class="stat">
+                <h2>∞</h2>
+                <p>Ideas</p>
             </div>
 
         </div>
@@ -1398,89 +816,46 @@
     </section>
 
 
+    <!-- SKILLS -->
 
-    <!-- ================= SKILLS ================= -->
+    <section>
 
-    <section class="skills">
-
-        <h2>
-            My Skills
+        <h2 class="section-title">
+            My <span>Skills</span>
         </h2>
 
+        <div class="skills">
 
-        <p class="section-subtitle">
-
-            Technologies and skills I'm learning.
-
-        </p>
-
-
-        <div class="skills-container">
-
-            <div class="skill">
-                HTML
-            </div>
-
-            <div class="skill">
-                CSS
-            </div>
-
-            <div class="skill">
-                JavaScript
-            </div>
-
-            <div class="skill">
-                Python
-            </div>
-
-            <div class="skill">
-                Web Development
-            </div>
-
-            <div class="skill">
-                Content Creation
-            </div>
-
-            <div class="skill">
-                Gaming
-            </div>
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Python</div>
+            <div class="skill">Web Development</div>
+            <div class="skill">Content Creation</div>
+            <div class="skill">Gaming</div>
 
         </div>
 
     </section>
 
 
-
-    <!-- ================= PROJECTS ================= -->
+    <!-- PROJECTS -->
 
     <section id="projects">
 
-        <h2>
-            My Projects
+        <h2 class="section-title">
+            My <span>Projects</span>
         </h2>
 
+        <div class="projects">
 
-        <p class="section-subtitle">
+            <div class="project">
 
-            Projects I'm building while learning.
-
-        </p>
-
-
-        <div class="cards">
-
-
-            <div class="project-card">
-
-                <h3>
-                    🌐 Personal Website
-                </h3>
+                <h3>🌐 Personal Website</h3>
 
                 <p>
-
-                    My official personal website,
-                    built while learning web development.
-
+                    My first personal website built with
+                    HTML, CSS and JavaScript.
                 </p>
 
                 <span class="status">
@@ -1490,17 +865,13 @@
             </div>
 
 
-            <div class="project-card">
+            <div class="project">
 
-                <h3>
-                    🐍 Python Projects
-                </h3>
+                <h3>🐍 Python Projects</h3>
 
                 <p>
-
-                    Small Python projects and experiments
-                    I'm creating while learning.
-
+                    Learning Python and building small
+                    projects while improving my skills.
                 </p>
 
                 <span class="status">
@@ -1510,17 +881,13 @@
             </div>
 
 
-            <div class="project-card">
+            <div class="project">
 
-                <h3>
-                    🚀 Future Projects
-                </h3>
+                <h3>🚀 Future Projects</h3>
 
                 <p>
-
-                    More websites, applications
-                    and creative ideas coming soon.
-
+                    More websites, applications and
+                    programming projects coming soon.
                 </p>
 
                 <span class="status">
@@ -1534,37 +901,29 @@
     </section>
 
 
-
-    <!-- ================= CONTENT ================= -->
+    <!-- CONTENT -->
 
     <section>
 
-        <h2>
-            My Content
+        <h2 class="section-title">
+            My <span>Content</span>
         </h2>
 
+        <div class="social-box">
 
-        <div class="content-box">
+            <h2>Follow Me on Instagram</h2>
 
             <p>
-
-                I enjoy creating content around gaming,
-                technology, programming and my projects.
-
-                Follow my journey and stay updated
-                with what I'm creating.
-
+                Follow me to see my latest content,
+                gaming moments and future projects.
             </p>
 
-
             <a
                 href="https://www.instagram.com/moe._.mn/"
                 target="_blank"
-                rel="noopener noreferrer"
-                class="button">
-
-                📸 Instagram
-
+                class="instagram"
+            >
+                📸 @moe._.mn
             </a>
 
         </div>
@@ -1572,240 +931,196 @@
     </section>
 
 
+    <!-- CONTACT -->
 
-    <!-- ================= CONTACT ================= -->
+    <section id="contact">
 
-    <section
-        class="contact"
-        id="contact">
-
-        <h2>
-            Let's Connect
+        <h2 class="section-title">
+            Contact <span>Me</span>
         </h2>
 
+        <div class="contact-container">
 
-        <p class="section-subtitle">
+            <div class="contact-card">
 
-            Follow me, check my content
-            or contact me directly.
+                <div class="icon">📸</div>
 
-        </p>
+                <h3>Instagram</h3>
 
+                <p>@moe._.mn</p>
 
-        <div class="contact-buttons">
+                <a
+                    href="https://www.instagram.com/moe._.mn/"
+                    target="_blank"
+                    class="btn btn-primary"
+                >
+                    Open Instagram
+                </a>
 
-
-            <a
-                href="https://www.instagram.com/moe._.mn/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="button">
-
-                📸 Instagram
-
-            </a>
+            </div>
 
 
-            <a
-                href="mailto:moemnbrinsi@gmail.com"
-                class="button">
+            <div class="contact-card">
 
-                ✉️ Email Me
+                <div class="icon">📧</div>
 
-            </a>
+                <h3>Email</h3>
+
+                <p>moemnbrinsi@gmail.com</p>
+
+                <a
+                    href="mailto:moemnbrinsi@gmail.com"
+                    class="btn btn-primary"
+                >
+                    Send Email
+                </a>
+
+            </div>
 
         </div>
 
     </section>
 
 
-
-    <!-- ================= FOOTER ================= -->
+    <!-- FOOTER -->
 
     <footer>
 
-        © 2026
-
-        <span>
-            Moemen Brinsi
-        </span>
-
-        — All Rights Reserved.
+        <p>
+            © 2026 Moemen Brinsi. All rights reserved.
+        </p>
 
     </footer>
 
 
-
-    <!-- ================= JAVASCRIPT ================= -->
+    <!-- JAVASCRIPT -->
 
     <script>
 
+        // THEME
 
-        /* ================= DARK / LIGHT MODE ================= */
+        const themeBtn = document.getElementById("themeBtn");
 
-        function toggleTheme() {
+        themeBtn.addEventListener("click", () => {
 
             document.body.classList.toggle("light");
 
-            const button =
-                document.getElementById("themeButton");
+            if (document.body.classList.contains("light")) {
 
+                themeBtn.textContent = "☀️";
 
-            if (
-                document.body.classList.contains("light")
-            ) {
-
-                button.innerHTML = "☀️";
-
-                localStorage.setItem(
-                    "theme",
-                    "light"
-                );
+                localStorage.setItem("theme", "light");
 
             } else {
 
-                button.innerHTML = "🌙";
+                themeBtn.textContent = "🌙";
 
-                localStorage.setItem(
-                    "theme",
-                    "dark"
-                );
+                localStorage.setItem("theme", "dark");
 
             }
 
-        }
+        });
 
 
-        /* ================= SAVE THEME ================= */
+        // LOAD SAVED THEME
 
-        const savedTheme =
-            localStorage.getItem("theme");
-
-
-        if (savedTheme === "light") {
+        if (localStorage.getItem("theme") === "light") {
 
             document.body.classList.add("light");
 
-            document.getElementById(
-                "themeButton"
-            ).innerHTML = "☀️";
+            themeBtn.textContent = "☀️";
 
         }
 
 
+        // MOBILE MENU
 
-        /* ================= MOBILE MENU ================= */
+        const menuBtn = document.getElementById("menuBtn");
+        const navLinks = document.getElementById("navLinks");
 
-        function toggleMenu() {
+        menuBtn.addEventListener("click", () => {
 
-            document
-                .getElementById("navLinks")
-                .classList.toggle("active");
+            navLinks.classList.toggle("active");
 
-        }
-
+        });
 
 
-        /* ================= TYPING EFFECT ================= */
+        // CLOSE MOBILE MENU AFTER CLICK
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                navLinks.classList.remove("active");
+
+            });
+
+        });
+
+
+        // TYPING EFFECT
 
         const words = [
-
             "Developer",
             "Content Creator",
             "Gamer",
             "Student"
-
         ];
 
-
         let wordIndex = 0;
-
-        let letterIndex = 0;
-
+        let charIndex = 0;
         let deleting = false;
 
+        const typingText = document.getElementById("typingText");
 
-        function typingEffect() {
+        function typeEffect() {
 
-            const element =
-                document.getElementById("typing");
-
-
-            const currentWord =
-                words[wordIndex];
-
+            const currentWord = words[wordIndex];
 
             if (!deleting) {
 
-                element.textContent =
-                    currentWord.substring(
-                        0,
-                        letterIndex + 1
-                    );
+                typingText.textContent =
+                    currentWord.substring(0, charIndex + 1);
 
-                letterIndex++;
+                charIndex++;
 
-
-                if (
-                    letterIndex ===
-                    currentWord.length
-                ) {
+                if (charIndex === currentWord.length) {
 
                     deleting = true;
 
-                    setTimeout(
-                        typingEffect,
-                        1200
-                    );
+                    setTimeout(typeEffect, 1200);
 
                     return;
-
                 }
 
             } else {
 
-                element.textContent =
-                    currentWord.substring(
-                        0,
-                        letterIndex - 1
-                    );
+                typingText.textContent =
+                    currentWord.substring(0, charIndex - 1);
 
-                letterIndex--;
+                charIndex--;
 
-
-                if (letterIndex === 0) {
+                if (charIndex === 0) {
 
                     deleting = false;
 
                     wordIndex++;
 
-                    if (
-                        wordIndex ===
-                        words.length
-                    ) {
-
+                    if (wordIndex === words.length) {
                         wordIndex = 0;
-
                     }
 
                 }
 
             }
 
-
-            setTimeout(
-                typingEffect,
-                deleting ? 60 : 100
-            );
+            setTimeout(typeEffect, deleting ? 60 : 100);
 
         }
 
-
-        typingEffect();
-
+        typeEffect();
 
     </script>
-
 
 </body>
 
