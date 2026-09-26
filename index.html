@@ -1,1127 +1,235 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" dir="ltr">
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Moemen Brinsi | Official Website</title>
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M897NTWDS5"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-M897NTWDS5');
-    </script>
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        :root {
-            --bg: #0b0f19;
-            --bg2: #111827;
-            --card: #151c2b;
-            --text: #ffffff;
-            --text2: #aab3c5;
-            --main: #5865f2;
-            --main2: #7c3aed;
-            --border: rgba(255,255,255,0.08);
-        }
-
-        body.light {
-            --bg: #f5f7fb;
-            --bg2: #ffffff;
-            --card: #ffffff;
-            --text: #111827;
-            --text2: #5b6475;
-            --border: rgba(0,0,0,0.08);
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            transition: 0.3s;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* NAVBAR */
-
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 70px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 7%;
-            background: rgba(11, 15, 25, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
-            z-index: 1000;
-        }
-
-        body.light nav {
-            background: rgba(255,255,255,0.85);
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--main);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 28px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: var(--text2);
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--main);
-        }
-
-        .theme-btn {
-            border: none;
-            background: var(--card);
-            color: var(--text);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 18px;
-        }
-
-        .menu-btn {
-            display: none;
-            font-size: 28px;
-            cursor: pointer;
-        }
-
-        /* GENERAL */
-
-        section {
-            padding: 100px 8%;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 40px;
-            margin-bottom: 50px;
-        }
-
-        .section-title span {
-            color: var(--main);
-        }
-
-        /* HERO */
-
-        #home {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background:
-                radial-gradient(circle at top left, rgba(88,101,242,0.2), transparent 35%),
-                radial-gradient(circle at bottom right, rgba(124,58,237,0.18), transparent 35%);
-        }
-
-        .hero {
-            max-width: 900px;
-        }
-
-        .hero small {
-            color: var(--main);
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .hero h1 {
-            font-size: clamp(45px, 8vw, 85px);
-            margin: 15px 0;
-            line-height: 1.05;
-        }
-
-        .hero h1 span {
-            color: var(--main);
-        }
-
-        .typing {
-            font-size: 25px;
-            color: var(--text2);
-            min-height: 40px;
-        }
-
-        .hero p {
-            max-width: 650px;
-            margin: 20px auto;
-            color: var(--text2);
-            font-size: 17px;
-        }
-
-        .buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 13px 25px;
-            border-radius: 30px;
-            font-weight: bold;
-            border: 2px solid var(--main);
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background: var(--main);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(88,101,242,0.3);
-        }
-
-        .btn-outline {
-            color: var(--main);
-        }
-
-        .btn-outline:hover {
-            background: var(--main);
-            color: white;
-        }
-
-        /* ABOUT */
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .info-card {
-            background: var(--card);
-            padding: 30px 20px;
-            border-radius: 18px;
-            text-align: center;
-            border: 1px solid var(--border);
-            transition: 0.3s;
-        }
-
-        .info-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--main);
-        }
-
-        .info-card .icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
-
-        .info-card h3 {
-            margin-bottom: 10px;
-        }
-
-        .info-card p {
-            color: var(--text2);
-        }
-
-        /* WHAT I DO */
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .card {
-            background: var(--card);
-            padding: 35px;
-            border-radius: 20px;
-            border: 1px solid var(--border);
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            border-color: var(--main);
-        }
-
-        .card-icon {
-            font-size: 45px;
-            margin-bottom: 15px;
-        }
-
-        .card h3 {
-            font-size: 23px;
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            color: var(--text2);
-        }
-
-        /* GAMES */
-
-        #games {
-            background: var(--bg2);
-        }
-
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .game {
-            padding: 35px 20px;
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            text-align: center;
-            transition: 0.3s;
-        }
-
-        .game:hover {
-            transform: scale(1.04);
-            border-color: var(--main);
-        }
-
-        .game-icon {
-            font-size: 45px;
-            margin-bottom: 15px;
-        }
-
-        .game h3 {
-            margin-bottom: 5px;
-        }
-
-        .game p {
-            color: var(--text2);
-        }
-
-        /* STATS */
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .stat {
-            text-align: center;
-            background: var(--card);
-            border: 1px solid var(--border);
-            padding: 35px 15px;
-            border-radius: 18px;
-        }
-
-        .stat h2 {
-            color: var(--main);
-            font-size: 45px;
-        }
-
-        .stat p {
-            color: var(--text2);
-        }
-
-        /* SKILLS */
-
-        .skills {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            max-width: 900px;
-            margin: auto;
-        }
-
-        .skill {
-            padding: 12px 20px;
-            border-radius: 30px;
-            background: var(--card);
-            border: 1px solid var(--border);
-            color: var(--text2);
-            transition: 0.3s;
-        }
-
-        .skill:hover {
-            color: white;
-            background: var(--main);
-            transform: translateY(-3px);
-        }
-
-        /* PROJECTS */
-
-        #projects {
-            background: var(--bg2);
-        }
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .project {
-            background: var(--card);
-            padding: 30px;
-            border-radius: 18px;
-            border: 1px solid var(--border);
-        }
-
-        .project h3 {
-            margin-bottom: 10px;
-        }
-
-        .project p {
-            color: var(--text2);
-            margin-bottom: 15px;
-        }
-
-        .status {
-            display: inline-block;
-            padding: 6px 12px;
-            border-radius: 20px;
-            background: rgba(88,101,242,0.15);
-            color: var(--main);
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-        /* SOCIAL */
-
-        .social-box {
-            max-width: 700px;
-            margin: auto;
-            text-align: center;
-            background: var(--card);
-            border: 1px solid var(--border);
-            padding: 50px 30px;
-            border-radius: 25px;
-        }
-
-        .social-box p {
-            color: var(--text2);
-            margin-bottom: 25px;
-        }
-
-        .instagram {
-            display: inline-block;
-            background: linear-gradient(45deg, #feda75, #d62976, #4f5bd5);
-            color: white;
-            padding: 13px 25px;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .instagram:hover {
-            transform: translateY(-3px);
-        }
-
-        /* CONTACT */
-
-        .contact-container {
-            max-width: 800px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .contact-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            padding: 30px;
-            border-radius: 18px;
-            text-align: center;
-        }
-
-        .contact-card .icon {
-            font-size: 35px;
-            margin-bottom: 10px;
-        }
-
-        .contact-card h3 {
-            margin-bottom: 8px;
-        }
-
-        .contact-card p {
-            color: var(--text2);
-            margin-bottom: 15px;
-        }
-
-        /* FOOTER */
-
-        footer {
-            padding: 30px 20px;
-            text-align: center;
-            background: #070a11;
-            color: #8992a4;
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 900px) {
-
-            .about-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .cards {
-                grid-template-columns: 1fr;
-            }
-
-            .games-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .projects {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 650px) {
-
-            nav {
-                padding: 0 5%;
-            }
-
-            .menu-btn {
-                display: block;
-            }
-
-            .nav-links {
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: var(--bg2);
-                display: none;
-                flex-direction: column;
-                padding: 25px;
-                border-bottom: 1px solid var(--border);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .theme-btn {
-                margin-top: 10px;
-            }
-
-            section {
-                padding: 80px 5%;
-            }
-
-            .section-title {
-                font-size: 32px;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .games-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 48px;
-            }
-
-            .typing {
-                font-size: 20px;
-            }
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta name="description" content="Moemen Brinsi Gaming Hub — browser games, XP and a global leaderboard.">
+<meta name="theme-color" content="#070b14">
+<title>Moemen Brinsi | Gaming Hub</title>
+<style>
+:root{
+  --bg:#070b14;--bg2:#0c1220;--panel:rgba(17,24,42,.82);--panel2:#121a2e;
+  --text:#f7f9ff;--muted:#9aa6c0;--primary:#7c5cff;--cyan:#00d4ff;
+  --green:#39e59a;--red:#ff607e;--gold:#ffd166;--border:rgba(255,255,255,.09);
+  --shadow:0 24px 80px rgba(0,0,0,.38);--radius:22px;
+}
+body.light{--bg:#f4f7fb;--bg2:#fff;--panel:rgba(255,255,255,.9);--panel2:#fff;--text:#101522;--muted:#66718a;--border:rgba(0,0,0,.09);--shadow:0 20px 55px rgba(30,40,70,.12)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,Segoe UI,Arial,sans-serif;background:radial-gradient(circle at 10% 10%,rgba(124,92,255,.15),transparent 28%),radial-gradient(circle at 90% 20%,rgba(0,212,255,.10),transparent 25%),var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.85),transparent 86%)}
+body.light::before{display:none}
+button,input{font:inherit}button{cursor:pointer}a{text-decoration:none;color:inherit}
+.container{width:min(1180px,calc(100% - 28px));margin:auto}
+.topbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(7,11,20,.72);backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
+body.light .topbar{background:rgba(255,255,255,.84)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-size:22px;font-weight:1000;letter-spacing:-.6px}.brand span{color:var(--primary)}
+.nav-links{display:flex;align-items:center;gap:20px}.nav-links a{font-size:14px;color:var(--muted)}.nav-links a:hover{color:var(--text)}
+.nav-actions{display:flex;gap:8px}.icon-btn{height:42px;min-width:42px;padding:0 11px;border:1px solid var(--border);border-radius:12px;background:var(--panel);color:var(--text)}.menu-btn{display:none}
+main{padding-top:72px}section{padding:94px 0}.hero{min-height:calc(100vh - 72px);display:grid;place-items:center}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:42px;align-items:center}
+.eyebrow{color:var(--cyan);font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}.hero h1{font-size:clamp(46px,7vw,86px);line-height:.95;letter-spacing:-4px}.gradient{background:linear-gradient(90deg,var(--primary),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p,.section-head p{color:var(--muted);line-height:1.75}.hero p{max-width:680px;font-size:17px;margin:22px 0 28px}.actions{display:flex;flex-wrap:wrap;gap:10px}
+.btn{min-height:44px;padding:12px 17px;border-radius:13px;border:1px solid var(--border);display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:850;color:var(--text);background:var(--panel);transition:.2s}.btn:hover{transform:translateY(-2px)}.btn-primary{border-color:transparent;color:#fff;background:linear-gradient(135deg,var(--primary),#5d8cff)}.btn-small{min-height:38px;padding:9px 12px;font-size:13px}
+.hero-panel{padding:28px;border:1px solid var(--border);border-radius:28px;background:linear-gradient(145deg,rgba(124,92,255,.16),rgba(0,212,255,.05));box-shadow:var(--shadow)}.hero-avatar{width:112px;height:112px;border-radius:30px;display:grid;place-items:center;font-size:40px;font-weight:1000;background:linear-gradient(135deg,var(--primary),var(--cyan));margin-bottom:20px}
+.mini-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}.mini-box{padding:14px;border:1px solid var(--border);border-radius:15px;background:rgba(255,255,255,.04);text-align:center}.mini-box strong{display:block;font-size:22px}.mini-box span{display:block;color:var(--muted);font-size:11px;margin-top:4px}
+.section-head{margin-bottom:34px}.section-head h2{font-size:clamp(30px,5vw,50px);line-height:1.02;letter-spacing:-2px}.section-head p{margin-top:13px;max-width:760px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}.stat{padding:24px;text-align:center}.stat strong{font-size:38px;display:block}.stat span{color:var(--muted);font-size:13px}
+.game-toolbar{display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:22px}.score-box{display:flex;align-items:center;gap:12px;padding:13px 15px;border:1px solid var(--border);border-radius:16px;background:linear-gradient(135deg,rgba(124,92,255,.13),rgba(0,212,255,.07))}.score-box small{display:block;color:var(--muted)}.score-box strong{font-size:24px}.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{border:1px solid var(--border);background:var(--panel);color:var(--muted);padding:9px 13px;border-radius:11px}.filter.active{background:var(--primary);color:#fff;border-color:transparent}
+.games-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.game-card{padding:20px;cursor:pointer;transition:.2s;position:relative;overflow:hidden}.game-card::after{content:"";position:absolute;inset:auto -30px -60px auto;width:130px;height:130px;border-radius:50%;background:rgba(124,92,255,.11);filter:blur(8px)}.game-card:hover{transform:translateY(-5px);border-color:rgba(124,92,255,.38)}.game-icon{font-size:36px;margin-bottom:13px}.game-card h3{font-size:18px;margin-bottom:7px}.game-card p{color:var(--muted);line-height:1.55;font-size:13px;min-height:41px}.game-meta{display:flex;justify-content:space-between;gap:7px;margin-top:13px;font-size:11px;color:var(--muted)}.game-meta b{color:var(--cyan)}
+.leader-grid{display:grid;grid-template-columns:.76fr 1.24fr;gap:18px}.profile-card{padding:24px}.profile-card h3{font-size:22px}.profile-card p{color:var(--muted);line-height:1.65;margin-top:8px}.name-row{display:flex;gap:8px;margin-top:18px}.input{width:100%;min-height:44px;padding:11px 13px;border:1px solid var(--border);background:var(--panel2);color:var(--text);border-radius:12px;outline:none}.input:focus{border-color:var(--primary)}
+.leader-card{padding:20px}.leader-head{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:12px}.leader-list{display:grid;gap:8px}.leader-row{display:grid;grid-template-columns:52px 1fr auto;align-items:center;gap:12px;padding:13px;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.035)}.leader-row.you{border-color:rgba(0,212,255,.35);background:rgba(0,212,255,.08)}.rank{text-align:center;font-weight:950}.leader-name{font-weight:850;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.leader-name small{color:var(--muted);font-weight:600}.leader-points{font-weight:900;white-space:nowrap}
+.presence{display:grid;gap:8px;margin-top:16px;max-height:260px;overflow:auto}.presence-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 13px;border:1px solid var(--border);border-radius:12px;background:rgba(255,255,255,.025)}.presence-left{display:flex;align-items:center;gap:10px;font-weight:800}.status-dot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 12px rgba(57,229,154,.75)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.about-card{padding:26px}.about-card h3{margin-bottom:10px}.about-card p{color:var(--muted);line-height:1.75}.socials{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.social{padding:10px 13px;border:1px solid var(--border);border-radius:11px;background:var(--panel);font-size:13px}
+footer{padding:32px 0 50px;color:var(--muted);text-align:center;border-top:1px solid var(--border)}.footer-links{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:10px}
+.modal{position:fixed;inset:0;z-index:3000;display:none;align-items:center;justify-content:center;padding:10px;background:rgba(0,0,0,.8);backdrop-filter:blur(13px)}.modal.show{display:flex}.modal-box{width:min(1020px,100%);max-height:94vh;overflow:auto;border:1px solid var(--border);border-radius:24px;background:var(--bg2);box-shadow:0 30px 100px rgba(0,0,0,.48);padding:18px}.modal-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}.modal-head h3{font-size:23px}.close-btn{width:42px;height:42px;border:1px solid var(--border);border-radius:12px;background:var(--panel);color:var(--text)}
+.game-shell{min-height:420px}.game-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}.game-stats{display:flex;gap:8px;flex-wrap:wrap}.pill{padding:8px 11px;border:1px solid var(--border);border-radius:10px;background:rgba(255,255,255,.035);font-size:12px;color:var(--muted)}.pill b{color:var(--text)}.game-center{display:grid;place-items:center}.hint{text-align:center;color:var(--muted);font-size:13px;line-height:1.6;margin-top:12px}.status{min-height:24px;text-align:center;font-weight:850;margin-top:12px}.status.good{color:var(--green)}.status.bad{color:var(--red)}.status.warn{color:var(--gold)}
+.board2048{width:min(410px,100%);aspect-ratio:1;background:#2b3150;border-radius:20px;padding:10px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.tile2048{border-radius:13px;display:grid;place-items:center;font-size:clamp(20px,6vw,34px);font-weight:1000;background:#3a4164;color:#fff;min-width:0}.tile2048.v2{background:#5c6cf0}.tile2048.v4{background:#7e59dd}.tile2048.v8{background:#d06b7b}.tile2048.v16{background:#ef7b49}.tile2048.v32{background:#f08d4a}.tile2048.v64{background:#ef5d45}.tile2048.v128{background:#d7a23f}.tile2048.v256{background:#77aa55}.tile2048.v512{background:#4e9d84}.tile2048.v1024{background:#3d88a0}.tile2048.v2048{background:#e7bf45;color:#231d09}
+.arrow-grid{display:grid;grid-template-columns:repeat(3,56px);gap:7px;justify-content:center;margin-top:14px}.arrow-grid button{width:56px;height:56px;border:1px solid var(--border);border-radius:12px;background:var(--panel);color:var(--text);font-size:20px}.arrow-grid button:first-child{grid-column:2}.arrow-grid button:nth-child(2){grid-column:1;grid-row:2}.arrow-grid button:nth-child(3){grid-column:2;grid-row:2}.arrow-grid button:nth-child(4){grid-column:3;grid-row:2}
+.snake-canvas{width:min(480px,100%);aspect-ratio:1;border:1px solid var(--border);border-radius:18px;background:#04070d;display:block;touch-action:none}.dpad{display:grid;grid-template-columns:repeat(3,56px);grid-template-rows:repeat(2,56px);gap:7px;justify-content:center;margin-top:14px}.dpad button{border:1px solid var(--border);background:var(--panel);color:var(--text);border-radius:12px;font-size:20px}.dpad button:nth-child(1){grid-column:2}.dpad button:nth-child(2){grid-column:1;grid-row:2}.dpad button:nth-child(3){grid-column:2;grid-row:2}.dpad button:nth-child(4){grid-column:3;grid-row:2}
+.memory-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;width:min(500px,100%)}.memory-tile{aspect-ratio:1;border:1px solid var(--border);border-radius:14px;background:linear-gradient(135deg,#141c33,#0e1426);color:transparent;font-size:28px;display:grid;place-items:center;transition:.2s;touch-action:manipulation}.memory-tile.open,.memory-tile.matched{color:var(--text);background:rgba(124,92,255,.22)}
+.ttt-grid{display:grid;grid-template-columns:repeat(3,88px);gap:8px}.ttt-cell{width:88px;height:88px;border:1px solid var(--border);background:var(--panel);color:var(--text);border-radius:13px;font-size:36px;font-weight:900}
+.aim-area{width:100%;height:330px;border:1px solid var(--border);border-radius:18px;background:#080c17;position:relative;overflow:hidden;touch-action:manipulation}.aim-target{position:absolute;width:54px;height:54px;border-radius:50%;border:0;background:radial-gradient(circle at 35% 35%,#fff 0 7%,#ffb0be 8% 19%,var(--red) 20% 100%);box-shadow:0 0 0 3px rgba(255,96,126,.16),0 8px 20px rgba(0,0,0,.25)}
+.reaction-box{width:100%;min-height:250px;border:1px solid var(--border);border-radius:18px;background:#141a29;display:grid;place-items:center;text-align:center;padding:28px;font-size:28px;font-weight:900;touch-action:manipulation}.reaction-box.ready{background:#672033}.reaction-box.go{background:#14553f}
+.choice-row{display:flex;flex-wrap:wrap;justify-content:center;gap:9px}.choice{min-width:112px;min-height:68px;padding:12px;border:1px solid var(--border);border-radius:14px;background:var(--panel);color:var(--text);font-weight:900}
+.quiz-card{width:min(700px,100%);padding:24px;border:1px solid var(--border);border-radius:18px;background:var(--panel)}.quiz-question{font-size:21px;font-weight:900;line-height:1.45;margin-bottom:14px}.quiz-option{width:100%;text-align:start;padding:13px;border:1px solid var(--border);background:var(--panel2);color:var(--text);border-radius:12px;margin-top:8px}
+.click-btn{width:min(320px,100%);aspect-ratio:1;border-radius:50%;border:0;background:radial-gradient(circle,#a99dff 0,#7c5cff 38%,#5137b9 100%);color:#fff;font-size:34px;font-weight:1000;box-shadow:0 20px 50px rgba(124,92,255,.28);touch-action:manipulation}
+.flappy-canvas{width:min(540px,100%);aspect-ratio:1.6;border:1px solid var(--border);border-radius:18px;background:linear-gradient(#86d9ff,#dff7ff 68%,#85c76e 68%);display:block;touch-action:none}.breakout-canvas{width:min(620px,100%);aspect-ratio:1.65;border:1px solid var(--border);border-radius:18px;background:#080b14;display:block;touch-action:none}
+.mine-grid{display:grid;grid-template-columns:repeat(9,34px);gap:3px}.mine-cell{width:34px;height:34px;border:1px solid var(--border);border-radius:6px;background:#26304a;color:#fff;font-weight:900}.mine-cell.revealed{background:#131a2a}.mine-cell.flagged{color:var(--gold)}
+/* Block puzzle */
+.block-layout{display:grid;grid-template-columns:auto 220px;gap:18px;align-items:start}.block-board{display:grid;grid-template-columns:repeat(8,38px);grid-template-rows:repeat(8,38px);gap:4px;background:#11192d;padding:10px;border-radius:18px;border:1px solid var(--border)}.block-cell{border:0;border-radius:8px;background:#222c48}.block-cell.filled{box-shadow:inset 0 0 0 2px rgba(255,255,255,.15)}.piece-panel{padding:16px;border:1px solid var(--border);border-radius:18px;background:var(--panel)}.piece-list{display:grid;gap:12px}.piece-btn{border:1px solid var(--border);border-radius:14px;background:#10172a;padding:12px;display:grid;place-items:center}.piece-btn.active{border-color:var(--primary);box-shadow:0 0 0 2px rgba(124,92,255,.2)}.mini-grid{display:grid;grid-template-columns:repeat(5,20px);gap:3px}.mini-cell{width:20px;height:20px;border-radius:4px;background:#202a46}.mini-cell.on{background:#7c5cff}.block-help{color:var(--muted);font-size:12px;line-height:1.55;margin-top:10px}
+/* Pong */
+.pong-canvas{width:min(700px,100%);aspect-ratio:1.7;background:#07101e;border:1px solid var(--border);border-radius:18px;display:block;touch-action:none}.pong-controls{display:flex;gap:8px;justify-content:center;margin-top:10px}.pong-controls button{min-width:120px}
+/* Blackjack */
+.bj-table{width:100%;max-width:900px;margin:auto;padding:22px;border-radius:24px;background:linear-gradient(145deg,rgba(26,94,70,.50),rgba(8,47,35,.78));border:1px solid rgba(117,244,180,.13);box-shadow:0 28px 80px rgba(0,0,0,.34)}.bj-section{margin-bottom:18px}.bj-label{display:flex;justify-content:space-between;align-items:center;color:#c9e7d7;margin-bottom:10px}.bj-total{font-size:15px;font-weight:900;color:#fff}.bj-cards{min-height:140px;display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap}.bj-card{width:92px;height:130px;position:relative;border-radius:13px;background:linear-gradient(145deg,#fff,#e8e8e8);color:#111;display:flex;flex-direction:column;justify-content:space-between;padding:9px;box-shadow:0 12px 25px rgba(0,0,0,.30);animation:cardIn .35s ease}.bj-card.red{color:#d62839}.bj-card.black{color:#151515}.bj-card-top{font-weight:1000;font-size:20px;line-height:1}.bj-card-suit{font-size:38px;text-align:center}.bj-card-bottom{font-weight:1000;font-size:19px;transform:rotate(180deg);align-self:flex-end}.bj-hidden{background:linear-gradient(45deg,rgba(255,255,255,.06) 25%,transparent 25%),linear-gradient(-45deg,rgba(255,255,255,.06) 25%,transparent 25%),#111a30;background-size:14px 14px;border:2px solid #7c5cff}.bj-hidden:after{content:"MB";position:absolute;inset:15px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.25);border-radius:9px;color:#b8adff;font-weight:1000;font-size:22px}@keyframes cardIn{from{transform:translateY(-12px) scale(.92);opacity:0}to{transform:translateY(0) scale(1);opacity:1}}.bj-divider{height:1px;background:rgba(255,255,255,.10);margin:16px 0}.bj-result{text-align:center;min-height:34px;padding:8px;font-size:20px;font-weight:1000;color:#fff}.bj-result.win{color:#43e69e}.bj-result.lose{color:#ff708c}.bj-result.draw{color:#ffd166}.bj-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:14px}.bj-scoreboard{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:14px}.bj-stat{text-align:center;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:12px}.bj-stat strong{display:block;font-size:21px}.bj-stat span{color:#9fb2a9;font-size:11px}.note{padding:11px 13px;border-radius:12px;background:rgba(255,209,102,.08);border:1px solid rgba(255,209,102,.18);color:#ead47f;font-size:12px;line-height:1.5}
+/* Wheel */
+.wheel-wrap{display:grid;place-items:center}.wheel{width:min(330px,78vw);aspect-ratio:1;border-radius:50%;border:8px solid #fff;box-shadow:0 20px 55px rgba(0,0,0,.35);position:relative;overflow:hidden}.wheel::after{content:"";position:absolute;inset:14%;border-radius:50%;border:3px solid rgba(255,255,255,.35);pointer-events:none}.wheel-arrow{margin-bottom:6px;font-size:28px}.spin-center{margin-top:-44px;position:relative;z-index:2;width:74px;height:74px;border-radius:50%;border:6px solid rgba(255,255,255,.8);background:var(--bg2);color:var(--text);font-weight:1000}.wheel-legend{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-top:16px;width:min(420px,100%)}.legend-item{padding:8px 10px;border:1px solid var(--border);border-radius:10px;font-size:12px;color:var(--muted)}
+/* Color match */
+.color-prompt{font-size:42px;font-weight:1000;letter-spacing:4px;text-align:center;margin:12px 0}.color-buttons{display:grid;grid-template-columns:repeat(2,minmax(120px,180px));gap:10px;justify-content:center}.color-choice{min-height:62px;border:0;border-radius:14px;color:#fff;font-weight:1000}
+.toast{position:fixed;right:18px;bottom:18px;z-index:5000;padding:13px 16px;border:1px solid var(--border);border-radius:13px;background:var(--panel2);color:var(--text);box-shadow:var(--shadow);opacity:0;transform:translateY(12px);transition:.22s;pointer-events:none}.toast.show{opacity:1;transform:translateY(0)}
+@media (max-width:1050px){.games-grid{grid-template-columns:repeat(3,1fr)}.stats{grid-template-columns:repeat(2,1fr)}.hero-grid,.leader-grid{grid-template-columns:1fr}.block-layout{grid-template-columns:1fr}.piece-panel{max-width:640px;margin:auto}}
+@media (max-width:760px){.nav-links{display:none;position:absolute;left:12px;right:12px;top:64px;padding:12px;border:1px solid var(--border);border-radius:16px;background:var(--bg2);flex-direction:column;align-items:stretch;box-shadow:var(--shadow)}.nav-links.open{display:flex}.nav-links a{padding:10px 12px}.menu-btn{display:block}.nav{height:64px}main{padding-top:64px}.hero{min-height:calc(100vh - 64px)}.hero h1{letter-spacing:-2.5px}.games-grid{grid-template-columns:repeat(2,1fr)}.about-grid{grid-template-columns:1fr}.ttt-grid{grid-template-columns:repeat(3,74px)}.ttt-cell{width:74px;height:74px}.mine-grid{grid-template-columns:repeat(9,30px)}.mine-cell{width:30px;height:30px}.block-board{grid-template-columns:repeat(8,32px);grid-template-rows:repeat(8,32px)}.bj-card{width:78px;height:110px}.bj-cards{min-height:120px}.bj-scoreboard{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.container{width:calc(100% - 18px)}section{padding:72px 0}.hero p{font-size:15px}.actions{display:grid}.actions .btn{width:100%}.games-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stat{padding:18px 12px}.stat strong{font-size:30px}.name-row{flex-direction:column}.modal{padding:5px}.modal-box{padding:12px}.quiz-card{padding:18px}.block-board{grid-template-columns:repeat(8,28px);grid-template-rows:repeat(8,28px);gap:3px;padding:8px}.block-cell{border-radius:6px}.color-buttons{grid-template-columns:1fr 1fr}}
+</style>
 </head>
-
 <body>
+<header class="topbar"><div class="container nav">
+<a class="brand" href="#home">Moemen<span>.</span></a>
+<nav class="nav-links" id="navLinks"><a href="#home" data-i18n="navHome">Home</a><a href="#games" data-i18n="navGames">Games</a><a href="#leaderboard" data-i18n="navLeaderboard">Leaderboard</a><a href="#about" data-i18n="navAbout">About</a></nav>
+<div class="nav-actions"><button class="icon-btn" id="langBtn" type="button">EN</button><button class="icon-btn" id="themeBtn" type="button">☀️</button><button class="icon-btn menu-btn" id="menuBtn" type="button">☰</button></div>
+</div></header>
+<main>
+<section class="hero" id="home"><div class="container hero-grid"><div>
+<div class="eyebrow" data-i18n="heroEyebrow">GAME HUB • MOEMEN BRINSI</div>
+<h1 data-i18n="heroTitle">Play. Compete.<br><span class="gradient">Have fun.</span></h1>
+<p data-i18n="heroText">A browser game hub for you and your friends. Pick a game, earn website XP, and climb the global leaderboard on PC or phone.</p>
+<div class="actions"><a class="btn btn-primary" href="#games" data-i18n="startPlaying">🎮 Start Playing</a><a class="btn" href="#leaderboard" data-i18n="globalLeaderboard">🏆 Global Leaderboard</a></div>
+</div><div class="hero-panel"><div class="hero-avatar">MB</div><h3>Moemen Brinsi</h3><p style="color:var(--muted);margin-top:6px" data-i18n="role">Developer • Gamer • Creator</p><div class="mini-row"><div class="mini-box"><strong id="heroGames">0</strong><span data-i18n="gamesLabel">Games</span></div><div class="mini-box"><strong id="heroPoints">0</strong><span data-i18n="yourPoints">Your XP</span></div><div class="mini-box"><strong id="activeCountHero">0</strong><span data-i18n="activeNow">Active now</span></div></div><div class="note" style="margin-top:18px;margin-bottom:0" data-i18n="funOnly">For fun only • XP/score only • no real money.</div></div></div></section>
+<section id="games"><div class="container"><div class="section-head"><div class="eyebrow" data-i18n="gamesEyebrow">01 — GAMES</div><h2 data-i18n="gameZone">The Game Zone.</h2><p data-i18n="gamesText">Classic and original mini-games with touch controls for phones and keyboard/mouse controls for PC.</p></div>
+<div class="game-toolbar"><div class="score-box"><div><small data-i18n="websiteXP">Your website XP</small><strong id="points">0</strong></div></div><div class="filters" id="filters"><button class="filter active" data-filter="all" type="button" data-i18n="all">All</button><button class="filter" data-filter="arcade" type="button" data-i18n="arcade">Arcade</button><button class="filter" data-filter="puzzle" type="button" data-i18n="puzzle">Puzzle</button><button class="filter" data-filter="quick" type="button" data-i18n="quick">Quick</button></div></div>
+<div class="games-grid" id="gamesGrid">
+<article class="card game-card" data-category="arcade" data-game="snake"><div class="game-icon">🐍</div><h3 data-game-title="snake">Snake</h3><p data-game-desc="snake">Grow the snake and beat your score.</p><div class="game-meta"><span data-i18n="pcMobile">PC + Mobile</span><b>+10 XP</b></div></article>
+<article class="card game-card" data-category="puzzle" data-game="2048"><div class="game-icon">🔢</div><h3 data-game-title="2048">2048</h3><p data-game-desc="2048">Merge tiles and chase 2048.</p><div class="game-meta"><span data-i18n="pcMobile">PC + Mobile</span><b>+10 XP</b></div></article>
+<article class="card game-card" data-category="quick" data-game="ttt"><div class="game-icon">⭕</div><h3 data-game-title="ttt">Tic-Tac-Toe</h3><p data-game-desc="ttt">Beat the computer on a 3×3 board.</p><div class="game-meta"><span data-i18n="pcMobile">PC + Mobile</span><b>+20 XP</b></div></article>
+<article class="card game-card" data-category="puzzle" data-game="memory"><div class="game-icon">🧠</div><h3 data-game-title="memory">Memory</h3><p data-game-desc="memory">Find every matching pair.</p><div class="game-meta"><span data-i18n="pcMobile">PC + Mobile</span><b>+30 XP</b></div></article>
+<article class="card game-card" data-category="quick" data-game="reaction"><div class="game-icon">⚡</div><h3 data-game-title="reaction">Reaction Test</h3><p data-game-desc="reaction">Wait for green and react fast.</p><div class="game-meta"><span data-i18n="pcMobile">PC + Mobile</span><b>XP by speed</b></div></article>
+<article class="card game-card" data-category="quick" data-game="rps"><div class="game-icon">✊</div><h3 data-game-title="rps">Rock Paper Scissors</h3><p data-game-desc="rps">Quick match against the computer.</p><div class="game-meta"><span data-i18n="pcMobile">PC + Mobile</span><b>+10 XP</b></div></article>
+<article class="card game-card" data-category="arcade" data-game="aim"><div class="game-icon">🎯</div><h3 data-game-title="aim">Aim Trainer</h3><p data-game-desc="aim">Hit as many targets as possible.</p><div class="game-meta"><span data-i18n="mouseTouch">Mouse + Touch</span><b>+5 XP</b></div></article>
+<article class="card game-card" data-category="quick" data-game="clicker"><div class="game-icon">🖱️</div><h3 data-game-title="clicker">Click Rush</h3><p data-game-desc="clicker">Tap as fast as you can for 10 seconds.</p><div class="game-meta"><span data-i18n="pcMobile">PC + Mobile</span><b>+1 XP</b></div></article>
+<article class="card game-card" data-category="arcade" data-game="flappy"><div class="game-icon">🐤</div><h3 data-game-title="flappy">Flappy</h3><p data-game-desc="flappy">Fly through gaps and survive.</p><div class="game-meta"><span data-i18n="pcMobile">PC + Mobile</span><b>+10 XP</b></div></article>
+<article class="card game-card" data-category="arcade" data-game="breakout"><div class="game-icon">🧱</div><h3 data-game-title="breakout">Breakout</h3><p data-game-desc="breakout">Clear the bricks with the paddle.</p><div class="game-meta"><span data-i18n="pcMobile">PC + Mobile</span><b>+2 XP</b></div></article>
+<article class="card game-card" data-category="puzzle" data-game="mines"><div class="game-icon">💣</div><h3 data-game-title="mines">Minesweeper</h3><p data-game-desc="mines">Reveal safe tiles and mark mines.</p><div class="game-meta"><span data-i18n="pcMobile">PC + Mobile</span><b>+50 XP</b></div></article>
+<article class="card game-card" data-category="quick" data-game="quiz"><div class="game-icon">❓</div><h3 data-game-title="quiz">Tech Quiz</h3><p data-game-desc="quiz">Fast programming and gaming questions.</p><div class="game-meta"><span data-i18n="pcMobile">PC + Mobile</span><b>+10 XP</b></div></article>
+<article class="card game-card" data-category="puzzle" data-game="block"><div class="game-icon">🧩</div><h3 data-game-title="block">Block Puzzle</h3><p data-game-desc="block">Original block-clearing puzzle inspired by the genre.</p><div class="game-meta"><span data-i18n="pcMobile">PC + Mobile</span><b>+5 XP</b></div></article>
+<article class="card game-card" data-category="arcade" data-game="pong"><div class="game-icon">🏓</div><h3 data-game-title="pong">Pong</h3><p data-game-desc="pong">Classic paddle battle against the computer.</p><div class="game-meta"><span data-i18n="pcMobile">PC + Mobile</span><b>+15 XP</b></div></article>
+<article class="card game-card" data-category="quick" data-game="blackjack"><div class="game-icon">🃏</div><h3 data-game-title="blackjack">Blackjack</h3><p data-game-desc="blackjack">Classic card game using XP only.</p><div class="game-meta"><span data-i18n="pcMobile">PC + Mobile</span><b>+20 XP</b></div></article>
+<article class="card game-card" data-category="quick" data-game="wheel"><div class="game-icon">🎡</div><h3 data-game-title="wheel">XP Wheel</h3><p data-game-desc="wheel">Spin a fun reward wheel for bonus XP.</p><div class="game-meta"><span data-i18n="pcMobile">PC + Mobile</span><b>Bonus XP</b></div></article>
+<article class="card game-card" data-category="quick" data-game="color"><div class="game-icon">🎨</div><h3 data-game-title="color">Color Match</h3><p data-game-desc="color">Match the displayed color as fast as possible.</p><div class="game-meta"><span data-i18n="pcMobile">PC + Mobile</span><b>+5 XP</b></div></article>
+</div></div></section>
+<section id="leaderboard"><div class="container"><div class="section-head"><div class="eyebrow" data-i18n="leaderEyebrow">02 — LEADERBOARD</div><h2 data-i18n="leaderTitle">Global scores.</h2><p data-i18n="leaderText">Choose a username, then your shared XP score appears for everyone. Active players are shown from the recent presence heartbeat.</p></div>
+<div class="leader-grid"><div class="card profile-card"><h3 data-i18n="yourPlayer">Your player</h3><p data-i18n="nameHelp">Pick a name for the leaderboard.</p><div class="name-row"><input id="nameInput" class="input" maxlength="20" data-i18n-placeholder="username" placeholder="Your username"><button class="btn btn-primary" id="saveNameBtn" type="button" data-i18n="save">Save</button></div><div id="firebaseStatus" style="color:var(--muted);margin-top:14px">Connecting…</div><div class="presence" id="presenceList"></div></div>
+<div class="card leader-card"><div class="leader-head"><h3>🏆 <span data-i18n="top50">Top 50</span></h3><span id="leaderCount" style="color:var(--muted);font-size:12px">Loading…</span></div><div class="leader-list" id="leaderList"><div style="color:var(--muted);padding:20px;text-align:center">Loading leaderboard…</div></div></div></div></div></section>
+<section id="about"><div class="container"><div class="section-head"><div class="eyebrow" data-i18n="aboutEyebrow">03 — ABOUT</div><h2 data-i18n="aboutTitle">Made for sharing.</h2><p data-i18n="aboutText">Send the site to your friends, let them pick a username, and start a mini competition for XP.</p></div><div class="about-grid"><div class="card about-card"><h3 data-i18n="aboutIdea">🎮 The idea</h3><p data-i18n="aboutIdeaText">Fast browser games, touch-friendly controls, a shared leaderboard, achievements, and fun sessions.</p></div><div class="card about-card"><h3 data-i18n="aboutDevice">📱 PC + Phone</h3><p data-i18n="aboutDeviceText">Games use responsive layouts. Mouse, keyboard, touch buttons, and taps are supported where useful.</p></div></div><div class="socials"><a class="social" href="https://www.instagram.com/moe._.mn/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a class="social" href="https://github.com/moemnbrinsi-pixel/moemnbrinsi.github.io" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a class="social" href="mailto:moemnbrinsi@gmail.com">Email</a></div></div></section>
+</main>
+<footer><div class="container">© <span id="year"></span> Moemen Brinsi<div class="footer-links"><a href="#games" data-i18n="navGames">Games</a><a href="#leaderboard" data-i18n="navLeaderboard">Leaderboard</a><a href="#home" data-i18n="backTop">Back to top</a></div></div></footer>
+<div class="modal" id="gameModal" aria-hidden="true"><div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="gameTitle"><div class="modal-head"><h3 id="gameTitle">Game</h3><button class="close-btn" id="closeModal" type="button" aria-label="Close">✕</button></div><div id="gameArea" class="game-shell"></div></div></div>
+<div class="toast" id="toast"></div>
+<script type="module">
+import {initializeApp} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+import {getAuth,signInAnonymously} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+import {getFirestore,collection,doc,setDoc,onSnapshot,query,orderBy,limit,serverTimestamp,increment} from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+const firebaseConfig={apiKey:"AIzaSyAshvaRhQWFk_FUDDBlbLCyFamhd3zG0kc",authDomain:"tajribi-web.firebaseapp.com",projectId:"tajribi-web",storageBucket:"tajribi-web.firebasestorage.app",messagingSenderId:"259429553000",appId:"1:259429553000:web:2520772837fcd7677e7cdd",measurementId:"G-PLQ8NGDHKB"};
+const app=initializeApp(firebaseConfig);const db=getFirestore(app);const auth=getAuth(app);
+let firebaseReady=false,currentUid=null,leaderUnsub=null,presenceUnsub=null,presenceTimer=null,pendingPoints=0;
+let points=Math.max(0,Number(localStorage.getItem("mb-points")||0));
+let playerName=(localStorage.getItem("moemen_player_name")||"").slice(0,20);
+let lang=localStorage.getItem("mb-lang")||"en";
+let currentGameId=null;let cleanupFns=[];
+const $=id=>document.getElementById(id);const safeNum=n=>Math.max(0,Math.floor(Number(n)||0));
+const L={
+ en:{navHome:"Home",navGames:"Games",navLeaderboard:"Leaderboard",navAbout:"About",heroEyebrow:"GAME HUB • MOEMEN BRINSI",heroTitle:"Play. Compete.<br><span class=\"gradient\">Have fun.</span>",heroText:"A browser game hub for you and your friends. Pick a game, earn website XP, and climb the global leaderboard on PC or phone.",startPlaying:"🎮 Start Playing",globalLeaderboard:"🏆 Global Leaderboard",role:"Developer • Gamer • Creator",gamesLabel:"Games",yourPoints:"Your XP",activeNow:"Active now",funOnly:"For fun only • XP/score only • no real money.",gamesEyebrow:"01 — GAMES",gameZone:"The Game Zone.",gamesText:"Classic and original mini-games with touch controls for phones and keyboard/mouse controls for PC.",websiteXP:"Your website XP",all:"All",arcade:"Arcade",puzzle:"Puzzle",quick:"Quick",pcMobile:"PC + Mobile",mouseTouch:"Mouse + Touch",leaderEyebrow:"02 — LEADERBOARD",leaderTitle:"Global scores.",leaderText:"Choose a username, then your shared XP score appears for everyone. Active players are shown from the recent presence heartbeat.",yourPlayer:"Your player",nameHelp:"Pick a name for the leaderboard.",username:"Your username",save:"Save",top50:"Top 50",aboutEyebrow:"03 — ABOUT",aboutTitle:"Made for sharing.",aboutText:"Send the site to your friends, let them pick a username, and start a mini competition for XP.",aboutIdea:"🎮 The idea",aboutIdeaText:"Fast browser games, touch-friendly controls, a shared leaderboard, achievements, and fun sessions.",aboutDevice:"📱 PC + Phone",aboutDeviceText:"Games use responsive layouts. Mouse, keyboard, touch buttons, and taps are supported where useful.",backTop:"Back to top",connecting:"Connecting…",connected:"Connected • player ready.",saved:"Username saved • visible to everyone.",offline:"Offline mode • local XP still works.",enterName:"Enter a username first.",loading:"Loading…",noScores:"No scores yet. Be the first!",activePlayers:"Active players",noActive:"No active players seen yet.",you:"You",restart:"Restart",close:"Close",score:"Score",yourTurn:"Your turn",computer:"Computer",player:"Player",gameOver:"Game over",playAgain:"Play again",correct:"Correct!",wrong:"Not quite.",win:"You win!",lose:"You lose.",draw:"Draw.",roundLost:"Round lost.",roundWon:"Round won!",hit:"Hit",stand:"Stand",newRound:"New round",blackjack:"BLACKJACK!",bust:"Bust!",dealerTurn:"Dealer turn…",yourMove:"Your move",rules:"XP only • no betting • no real money.",spin:"SPIN",bonus:"Bonus",daily:"Daily",good:"Good",bad:"Bad",fast:"Fast",tapStart:"Tap / click to start",spaceFlap:"Tap / Click / Space to flap",useArrows:"Arrow keys / WASD or the buttons",match:"Match",next:"Next",flag:"Flag",safe:"Safe",mine:"Mine",quizFinish:"Quiz finished!",blocked:"No more moves.",colorMatch:"Match the target color.",tooSoon:"Too soon!",waitGreen:"Wait for green…",time:"Time",clicks:"Clicks",best:"Best",lives:"Lives",active:"Active",xpAdded:"XP added",dealer:"Dealer",wins:"Wins",losses:"Losses",draws:"Draws",rock:"Rock",paper:"Paper",scissors:"Scissors",click:"CLICK"},
+ fr:{navHome:"Accueil",navGames:"Jeux",navLeaderboard:"Classement",navAbout:"À propos",heroEyebrow:"GAME HUB • MOEMEN BRINSI",heroTitle:"Joue. Compète.<br><span class=\"gradient\">Amuse-toi.</span>",heroText:"Un hub de jeux dans le navigateur pour toi et tes amis. Choisis un jeu, gagne de l’XP et monte dans le classement mondial sur PC ou téléphone.",startPlaying:"🎮 Jouer",globalLeaderboard:"🏆 Classement mondial",role:"Développeur • Gamer • Créateur",gamesLabel:"Jeux",yourPoints:"Ton XP",activeNow:"Actifs",funOnly:"Pour le fun • XP/score uniquement • aucun argent réel.",gamesEyebrow:"01 — JEUX",gameZone:"La zone de jeux.",gamesText:"Des mini-jeux classiques et originaux avec commandes tactiles sur téléphone et clavier/souris sur PC.",websiteXP:"Ton XP du site",all:"Tous",arcade:"Arcade",puzzle:"Puzzle",quick:"Rapide",pcMobile:"PC + Mobile",mouseTouch:"Souris + Tactile",leaderEyebrow:"02 — CLASSEMENT",leaderTitle:"Scores mondiaux.",leaderText:"Choisis un pseudo puis ton score XP partagé devient visible pour tout le monde. Les joueurs actifs viennent du signal récent.",yourPlayer:"Ton joueur",nameHelp:"Choisis un nom pour le classement.",username:"Ton pseudo",save:"Enregistrer",top50:"Top 50",aboutEyebrow:"03 — À PROPOS",aboutTitle:"Fait pour être partagé.",aboutText:"Envoie le site à tes amis, laissez-les choisir un pseudo et lancez une mini compétition d’XP.",aboutIdea:"🎮 L’idée",aboutIdeaText:"Des jeux rapides, des commandes tactiles, un classement partagé et des sessions fun.",aboutDevice:"📱 PC + Téléphone",aboutDeviceText:"Le design est responsive. Souris, clavier, boutons tactiles et clics sont pris en charge.",backTop:"Retour en haut",connecting:"Connexion…",connected:"Connecté • joueur prêt.",saved:"Pseudo enregistré • visible par tous.",offline:"Mode hors ligne • l’XP locale fonctionne.",enterName:"Entre d’abord un pseudo.",loading:"Chargement…",noScores:"Aucun score. Sois le premier !",activePlayers:"Joueurs actifs",noActive:"Aucun joueur actif pour le moment.",you:"Toi",restart:"Recommencer",close:"Fermer",score:"Score",yourTurn:"À toi",computer:"Ordinateur",player:"Joueur",gameOver:"Partie terminée",playAgain:"Rejouer",correct:"Correct !",wrong:"Pas tout à fait.",win:"Tu gagnes !",lose:"Tu perds.",draw:"Égalité.",roundLost:"Manche perdue.",roundWon:"Manche gagnée !",hit:"Tirer",stand:"Rester",newRound:"Nouvelle manche",blackjack:"BLACKJACK !",bust:"Dépassement !",dealerTurn:"Tour du dealer…",yourMove:"À toi",rules:"XP uniquement • aucun pari • aucun argent réel.",spin:"TOURNER",bonus:"Bonus",daily:"Quotidien",good:"Bien",bad:"Raté",fast:"Rapide",tapStart:"Tape / clique pour commencer",spaceFlap:"Tape / clique / Espace pour voler",useArrows:"Flèches / ZQSD ou boutons",match:"Match",next:"Suivant",flag:"Drapeau",safe:"Sûr",mine:"Mine",quizFinish:"Quiz terminé !",blocked:"Plus de coups.",colorMatch:"Fais correspondre la couleur.",tooSoon:"Trop tôt !",waitGreen:"Attends le vert…",time:"Temps",clicks:"Clics",best:"Record",lives:"Vies",active:"Actif",xpAdded:"XP ajouté",dealer:"Dealer",wins:"Victoires",losses:"Défaites",draws:"Égalités",rock:"Pierre",paper:"Papier",scissors:"Ciseaux",click:"CLIC"},
+ ar:{navHome:"الرئيسية",navGames:"الألعاب",navLeaderboard:"الترتيب",navAbout:"حول",heroEyebrow:"GAME HUB • MOEMEN BRINSI",heroTitle:"العب. نافس.<br><span class=\"gradient\">واستمتع.</span>",heroText:"مجموعة ألعاب داخل المتصفح ليك ولصحابك. اختار لعبة، اجمع XP واطلع في الترتيب العالمي من الـPC ولا الهاتف.",startPlaying:"🎮 ابدأ اللعب",globalLeaderboard:"🏆 الترتيب العالمي",role:"مبرمج • Gamer • صانع محتوى",gamesLabel:"الألعاب",yourPoints:"XP متاعك",activeNow:"متصل الآن",funOnly:"للترفيه فقط • XP/score فقط • بلا فلوس حقيقية.",gamesEyebrow:"01 — الألعاب",gameZone:"منطقة الألعاب",gamesText:"ألعاب كلاسيكية وألعاب أصلية صغيرة، بتصميم يخدم الهاتف والـPC.",websiteXP:"XP متاعك في الموقع",all:"الكل",arcade:"Arcade",puzzle:"ألغاز",quick:"سريعة",pcMobile:"PC + هاتف",mouseTouch:"ماوس + لمس",leaderEyebrow:"02 — الترتيب",leaderTitle:"النتائج العالمية",leaderText:"اختار اسم مستعار وبعدها XP متاعك يظهر للناس الكل. اللاعبين النشطين يظهروا من آخر إشارة حضور.",yourPlayer:"اللاعب متاعك",nameHelp:"اختار اسم يظهر في الترتيب.",username:"اسمك",save:"حفظ",top50:"أفضل 50",aboutEyebrow:"03 — حول",aboutTitle:"مصمم باش يتشارك.",aboutText:"ابعث الموقع لصحابك، كل واحد يختار اسم ويبدؤوا منافسة XP.",aboutIdea:"🎮 الفكرة",aboutIdeaText:"ألعاب سريعة، تحكم باللمس، ترتيب مشترك وجلسات ممتعة.",aboutDevice:"📱 PC + هاتف",aboutDeviceText:"التصميم responsive ويخدم بالماوس والكيبورد واللمس والأزرار.",backTop:"الرجوع للفوق",connecting:"جاري الاتصال…",connected:"متصل • اللاعب جاهز.",saved:"تم حفظ الاسم • ظاهر للناس الكل.",offline:"وضع أوفلاين • الـXP المحلية تخدم.",enterName:"اكتب اسم أولاً.",loading:"جاري التحميل…",noScores:"ما فما حتى score. كن أول واحد!",activePlayers:"اللاعبين النشطين",noActive:"ما فما حتى لاعب نشط توا.",you:"إنت",restart:"عاود",close:"سكر",score:"Score",yourTurn:"دورك",computer:"الكمبيوتر",player:"اللاعب",gameOver:"انتهت اللعبة",playAgain:"عاود اللعب",correct:"صحيح!",wrong:"موش صحيح.",win:"ربحت!",lose:"خسرت.",draw:"تعادل.",roundLost:"خسرت الجولة.",roundWon:"ربحت الجولة!",hit:"Hit",stand:"Stand",newRound:"جولة جديدة",blackjack:"BLACKJACK!",bust:"تعديت 21!",dealerTurn:"دور الـDealer…",yourMove:"دورك",rules:"XP فقط • بلا رهانات • بلا فلوس حقيقية.",spin:"SPIN",bonus:"Bonus",daily:"يومي",good:"باهي",bad:"غلط",fast:"سريع",tapStart:"اضغط / انقر باش تبدأ",spaceFlap:"اضغط / انقر / Space",useArrows:"الأسهم / WASD ولا الأزرار",match:"طابق",next:"التالي",flag:"علم",safe:"آمن",mine:"لغم",quizFinish:"كمل الـQuiz!",blocked:"ما عاد فماش حركات.",colorMatch:"طابق اللون.",tooSoon:"بكري برشا!",waitGreen:"استنى الأخضر…",time:"الوقت",clicks:"Clicks",best:"الأفضل",lives:"Lives",active:"نشط",xpAdded:"زاد XP",dealer:"الـDealer",wins:"الربحات",losses:"الخسارات",draws:"التعادلات",rock:"حجرة",paper:"ورقة",scissors:"مقص",click:"اضغط"}
+};
+const gameInfo={
+ snake:{title:{en:"Snake",fr:"Snake",ar:"Snake"},desc:{en:"Grow the snake and beat your score.",fr:"Fais grandir le serpent.",ar:"كبّر الحية وحط رقم قياسي."}},
+ "2048":{title:{en:"2048",fr:"2048",ar:"2048"},desc:{en:"Merge tiles and chase 2048.",fr:"Fusionne les cases.",ar:"ادمج الخانات وحاول توصل 2048."}},
+ ttt:{title:{en:"Tic-Tac-Toe",fr:"Tic-Tac-Toe",ar:"Tic-Tac-Toe"},desc:{en:"Beat the computer on a 3×3 board.",fr:"Bats l’ordinateur.",ar:"اربح الكمبيوتر في لوحة 3×3."}},
+ memory:{title:{en:"Memory",fr:"Memory",ar:"Memory"},desc:{en:"Find every matching pair.",fr:"Trouve les paires.",ar:"لقّى الأزواج الكل."}},
+ reaction:{title:{en:"Reaction Test",fr:"Test de réaction",ar:"اختبار السرعة"},desc:{en:"Wait for green and react fast.",fr:"Attends le vert.",ar:"استنى الأخضر واضرب بسرعة."}},
+ rps:{title:{en:"Rock Paper Scissors",fr:"Pierre Papier Ciseaux",ar:"حجرة ورقة مقص"},desc:{en:"Quick match against the computer.",fr:"Un duel rapide.",ar:"مواجهة سريعة مع الكمبيوتر."}},
+ aim:{title:{en:"Aim Trainer",fr:"Aim Trainer",ar:"اختبار التصويب"},desc:{en:"Hit as many targets as possible.",fr:"Touche le plus de cibles.",ar:"اضرب أكبر عدد من الأهداف."}},
+ clicker:{title:{en:"Click Rush",fr:"Click Rush",ar:"Click Rush"},desc:{en:"Tap as fast as you can for 10 seconds.",fr:"Clique pendant 10 secondes.",ar:"اضغط قد ما تنجم في 10 ثواني."}},
+ flappy:{title:{en:"Flappy",fr:"Flappy",ar:"Flappy"},desc:{en:"Fly through gaps and survive.",fr:"Passe entre les tuyaux.",ar:"عدّي بين الحواجز وابقى حي."}},
+ breakout:{title:{en:"Breakout",fr:"Breakout",ar:"Breakout"},desc:{en:"Clear the bricks with the paddle.",fr:"Détruis les briques.",ar:"كسّر الحواجز بالمضرب."}},
+ mines:{title:{en:"Minesweeper",fr:"Démineur",ar:"Minesweeper"},desc:{en:"Reveal safe tiles and mark mines.",fr:"Révèle les cases sûres.",ar:"اكشف الخانات الآمنة وعلّم الألغام."}},
+ quiz:{title:{en:"Tech Quiz",fr:"Quiz Tech",ar:"Quiz تقني"},desc:{en:"Fast programming and gaming questions.",fr:"Questions rapides.",ar:"أسئلة سريعة في البرمجة والـGaming."}},
+ block:{title:{en:"Block Puzzle",fr:"Block Puzzle",ar:"Block Puzzle"},desc:{en:"Original block-clearing puzzle inspired by the genre.",fr:"Puzzle de blocs original.",ar:"لعبة بلوكات أصلية مستوحاة من هذا النوع."}},
+ pong:{title:{en:"Pong",fr:"Pong",ar:"Pong"},desc:{en:"Classic paddle battle against the computer.",fr:"Duel de raquettes.",ar:"مباراة مضارب كلاسيكية."}},
+ blackjack:{title:{en:"Blackjack",fr:"Blackjack",ar:"Blackjack"},desc:{en:"Classic card game using XP only.",fr:"Jeu de cartes avec XP uniquement.",ar:"لعبة ورق باستعمال XP فقط."}},
+ wheel:{title:{en:"XP Wheel",fr:"Roue XP",ar:"عجلة XP"},desc:{en:"Spin a fun reward wheel for bonus XP.",fr:"Tourne la roue pour un bonus XP.",ar:"دور العجلة وخذ Bonus XP."}},
+ color:{title:{en:"Color Match",fr:"Color Match",ar:"مطابقة الألوان"},desc:{en:"Match the displayed color as fast as possible.",fr:"Associe la bonne couleur.",ar:"طابق اللون الصحيح بسرعة."}}
+};
+function t(k){return (L[lang]&&L[lang][k])||L.en[k]||k}
+function setLang(next){lang=next;localStorage.setItem("mb-lang",lang);document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";document.querySelectorAll("[data-i18n]").forEach(el=>{const key=el.dataset.i18n;if(L[lang][key]!=null)el.innerHTML=L[lang][key]});document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{el.placeholder=t(el.dataset.i18nPlaceholder)});document.querySelectorAll("[data-game-title]").forEach(el=>{const id=el.dataset.gameTitle;el.textContent=gameInfo[id].title[lang]});document.querySelectorAll("[data-game-desc]").forEach(el=>{const id=el.dataset.gameDesc;el.textContent=gameInfo[id].desc[lang]});$("langBtn").textContent=lang==="en"?"EN":lang==="fr"?"FR":"AR";if(currentGameId)openGame(currentGameId,true)}
+function updatePoints(){$("points").textContent=points.toLocaleString();$("heroPoints").textContent=points.toLocaleString();localStorage.setItem("mb-points",String(points))}
+function setPlayerName(name){const n=String(name||"").trim().slice(0,20);if(!n)return false;playerName=n;localStorage.setItem("moemen_player_name",n);$("nameInput").value=n;return true}
+function toast(msg){const el=$("toast");el.textContent=msg;el.classList.add("show");clearTimeout(window.__toast);window.__toast=setTimeout(()=>el.classList.remove("show"),1800)}
+async function savePresence(){if(!firebaseReady||!auth.currentUser||!playerName)return;try{await setDoc(doc(db,"presence",auth.currentUser.uid),{name:playerName,lastSeenAt:serverTimestamp()},{merge:true})}catch(e){console.error(e)}}
+async function writeGlobalPoints(amount){const safe=safeNum(amount);if(!safe||!firebaseReady||!auth.currentUser)return;try{if(!playerName){const entered=prompt(t("enterName"));if(entered)setPlayerName(entered)}if(!playerName)return;await setDoc(doc(db,"leaderboard",auth.currentUser.uid),{name:playerName,points:increment(safe),updatedAt:serverTimestamp(),lastSeenAt:serverTimestamp()},{merge:true});await savePresence()}catch(e){console.error("Global XP error",e)}}
+async function pushGlobalPoints(amount){const safe=safeNum(amount);if(!safe)return;points+=safe;updatePoints();if(!firebaseReady){pendingPoints+=safe;return}await writeGlobalPoints(safe)}
+window.addGamePoints=pushGlobalPoints;window.saveGlobalScore=async(name,amount)=>{setPlayerName(name);await pushGlobalPoints(amount)};
+async function registerPlayer(){if(!firebaseReady||!auth.currentUser||!playerName)return false;try{await setDoc(doc(db,"leaderboard",auth.currentUser.uid),{name:playerName,points:increment(0),updatedAt:serverTimestamp(),lastSeenAt:serverTimestamp()},{merge:true});await savePresence();return true}catch(e){console.error(e);return false}}
+function esc(s){return String(s).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;")}
+function renderLeaderboard(list){$("leaderCount").textContent=list.length+" / 50";$("leaderList").innerHTML=list.length?list.map((p,i)=>{const medal=i===0?"🥇":i===1?"🥈":i===2?"🥉":"#"+(i+1);const you=p.id===currentUid;return `<div class="leader-row ${you?'you':''}"><div class="rank">${medal}</div><div class="leader-name">${esc(p.name)}${you?' <small>('+esc(t("you"))+')</small>':''}</div><div class="leader-points">${p.points.toLocaleString()} XP</div></div>`}).join(""):`<div style="color:var(--muted);padding:20px;text-align:center">${t("noScores")}</div>`}
+function renderPresence(list){const now=Date.now();const active=list.filter(p=>p.lastSeen&&now-p.lastSeen<90000).sort((a,b)=>b.lastSeen-a.lastSeen);$("activeCountHero").textContent=active.length;$("presenceList").innerHTML=`<div style="font-size:12px;color:var(--muted);margin-bottom:2px">${t("activePlayers")}: ${active.length}</div>`+(active.length?active.map(p=>`<div class="presence-row"><div class="presence-left"><span class="status-dot"></span>${esc(p.name)}${p.id===currentUid?' ('+esc(t('you'))+')':''}</div><span style="font-size:11px;color:var(--muted)">${t('active')}</span></div>`).join(""):`<div style="color:var(--muted);font-size:12px;padding:6px 0">${t("noActive")}</div>`)}
+function startLiveData(uid){currentUid=uid;const q=query(collection(db,"leaderboard"),orderBy("points","desc"),limit(50));leaderUnsub?.();leaderUnsub=onSnapshot(q,s=>{const list=[];s.forEach(d=>{const x=d.data();list.push({id:d.id,name:x.name||"Player",points:Number(x.points)||0})});renderLeaderboard(list)},e=>$("firebaseStatus").textContent="Leaderboard error: "+e.message);const pq=query(collection(db,"presence"),orderBy("lastSeenAt","desc"),limit(50));presenceUnsub?.();presenceUnsub=onSnapshot(pq,s=>{const list=[];s.forEach(d=>{const x=d.data();let last=null;if(x.lastSeenAt?.toMillis)last=x.lastSeenAt.toMillis();else if(x.lastSeenAt?.seconds)last=x.lastSeenAt.seconds*1000;list.push({id:d.id,name:x.name||"Player",lastSeen:last})});renderPresence(list)},e=>console.error("Presence",e));clearInterval(presenceTimer);presenceTimer=setInterval(savePresence,30000)}
+signInAnonymously(auth).then(async cred=>{firebaseReady=true;$("firebaseStatus").textContent=t("connected");startLiveData(cred.user.uid);if(playerName)await registerPlayer();if(pendingPoints&&playerName){const q=pendingPoints;pendingPoints=0;await writeGlobalPoints(q)}}).catch(e=>{$("firebaseStatus").textContent=t("offline");console.error(e)});
+$("saveNameBtn").addEventListener("click",async()=>{if(!setPlayerName($("nameInput").value)){toast(t("enterName"));return}if(firebaseReady&&auth.currentUser){const ok=await registerPlayer();$("firebaseStatus").textContent=ok?t("saved"):t("offline")}else $("firebaseStatus").textContent=t("offline")});
+$("nameInput").addEventListener("keydown",e=>{if(e.key==="Enter")$("saveNameBtn").click()});
+$("themeBtn").addEventListener("click",()=>{document.body.classList.toggle("light");localStorage.setItem("mb-theme",document.body.classList.contains("light")?"light":"dark");$("themeBtn").textContent=document.body.classList.contains("light")?"🌙":"☀️"});if(localStorage.getItem("mb-theme")==="light"){$("themeBtn").textContent="🌙";document.body.classList.add("light")}
+$("menuBtn").addEventListener("click",()=>$ ("navLinks").classList.toggle("open"));document.querySelectorAll(".nav-links a").forEach(a=>a.addEventListener("click",()=>$ ("navLinks").classList.remove("open")));
+$("langBtn").addEventListener("click",()=>setLang(lang==="en"?"fr":lang==="fr"?"ar":"en"));
+$("year").textContent=new Date().getFullYear();$("nameInput").value=playerName;updatePoints();setLang(lang);
+const gameCards=[...document.querySelectorAll(".game-card")];$("heroGames").textContent=gameCards.length;
+document.querySelectorAll(".filter").forEach(btn=>btn.addEventListener("click",()=>{document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));btn.classList.add("active");const f=btn.dataset.filter;gameCards.forEach(c=>c.style.display=(f==="all"||c.dataset.category===f)?"block":"none")}));gameCards.forEach(c=>c.addEventListener("click",()=>openGame(c.dataset.game)));
+const modal=$("gameModal");$("closeModal").addEventListener("click",closeModal);modal.addEventListener("click",e=>{if(e.target===modal)closeModal()});document.addEventListener("keydown",e=>{if(e.key==="Escape"&&modal.classList.contains("show"))closeModal()});
+function onCleanup(fn){cleanupFns.push(fn)}function cleanupGame(){cleanupFns.splice(0).forEach(fn=>{try{fn()}catch{}})}
+function closeModal(){modal.classList.remove("show");modal.setAttribute("aria-hidden","true");currentGameId=null;cleanupGame()}
+function addStatus(text,type=""){const el=$("gameStatus");if(el){el.textContent=text;el.className="status "+type}}
+function baseGame(title,stats,body,hint=""){$("gameTitle").textContent=title;$("gameArea").innerHTML=`<div class="game-top"><div class="game-stats">${stats}</div><button class="btn btn-small" id="restartGame" type="button">${esc(t('restart'))}</button></div>${body}${hint?`<div class="hint">${hint}</div>`:""}`;return $("restartGame")}
+function openGame(id,fromLang=false){cleanupGame();currentGameId=id;modal.classList.add("show");modal.setAttribute("aria-hidden","false");const fn={snake:startSnake,"2048":start2048,ttt:startTTT,memory:startMemory,reaction:startReaction,rps:startRPS,aim:startAim,clicker:startClicker,flappy:startFlappy,breakout:startBreakout,mines:startMines,quiz:startQuiz,block:startBlock,pong:startPong,blackjack:startBlackjack,wheel:startWheel,color:startColor}[id];if(fn)fn();if(fromLang)toast(lang==="ar"?"تم تبديل اللغة":lang==="fr"?"Langue changée":"Language changed")}
 
-    <!-- NAVBAR -->
+function startSnake(){let snake=[{x:8,y:8},{x:7,y:8},{x:6,y:8}],dir={x:1,y:0},next={x:1,y:0},food={x:13,y:8},score=0,over=false,timer=null;const restart=baseGame("🐍 "+gameInfo.snake.title[lang],`<span class="pill">${t('score')} <b id="snakeScore">0</b></span>`,`<div class="game-center"><canvas id="snakeCanvas" class="snake-canvas" width="480" height="480"></canvas><div id="gameStatus" class="status"></div><div class="dpad" id="snakeDpad"><button data-d="up" type="button">▲</button><button data-d="left" type="button">◀</button><button data-d="down" type="button">▼</button><button data-d="right" type="button">▶</button></div></div>`,t("useArrows"));const c=$("snakeCanvas"),ctx=c.getContext("2d"),N=16,cell=c.width/N;function place(){const occ=new Set(snake.map(p=>p.x+","+p.y));do{food={x:Math.floor(Math.random()*N),y:Math.floor(Math.random()*N)}}while(occ.has(food.x+","+food.y))}function draw(){ctx.clearRect(0,0,c.width,c.height);ctx.fillStyle="#060a12";ctx.fillRect(0,0,c.width,c.height);ctx.fillStyle="#ff607e";ctx.beginPath();ctx.arc(food.x*cell+cell/2,food.y*cell+cell/2,cell*.28,0,Math.PI*2);ctx.fill();snake.forEach((p,i)=>{ctx.fillStyle=i===0?"#9e8dff":"#6f5ae7";ctx.fillRect(p.x*cell+2,p.y*cell+2,cell-4,cell-4)})}function tick(){if(over)return;dir=next;const h={x:snake[0].x+dir.x,y:snake[0].y+dir.y};if(h.x<0||h.x>=N||h.y<0||h.y>=N||snake.some(p=>p.x===h.x&&p.y===h.y)){over=true;addStatus(t('gameOver')+" • "+score,"bad");return}snake.unshift(h);if(h.x===food.x&&h.y===food.y){score++;$("snakeScore").textContent=score;void pushGlobalPoints(10);place()}else snake.pop();draw()}function setDir(d){const map={up:{x:0,y:-1},down:{x:0,y:1},left:{x:-1,y:0},right:{x:1,y:0}};const nd=map[d];if(nd&&!(nd.x===-dir.x&&nd.y===-dir.y))next=nd}const key=e=>{const m={ArrowUp:"up",ArrowDown:"down",ArrowLeft:"left",ArrowRight:"right",w:"up",s:"down",a:"left",d:"right",W:"up",S:"down",A:"left",D:"right"};if(m[e.key]){e.preventDefault();setDir(m[e.key])}};window.addEventListener("keydown",key);onCleanup(()=>window.removeEventListener("keydown",key));$("snakeDpad").querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>setDir(b.dataset.d)));restart.addEventListener("click",()=>{cleanupGame();startSnake()});timer=setInterval(tick,145);onCleanup(()=>clearInterval(timer));place();draw()}
 
-    <nav>
+function start2048(){let b=Array(16).fill(0),score=0,locked=false;const restart=baseGame("🔢 2048",`<span class="pill">${t('score')} <b id="s2048">0</b></span>`,`<div class="game-center"><div id="board2048" class="board2048"></div><div id="gameStatus" class="status"></div><div class="arrow-grid" id="a2048"><button data-d="up" type="button">▲</button><button data-d="left" type="button">◀</button><button data-d="down" type="button">▼</button><button data-d="right" type="button">▶</button></div></div>`,t("useArrows"));function spawn(){const e=b.map((v,i)=>v===0?i:-1).filter(i=>i>=0);if(e.length)b[e[Math.floor(Math.random()*e.length)]]=Math.random()<.9?2:4}function draw(){$("board2048").innerHTML=b.map(v=>`<div class="tile2048 ${v>1?'v'+Math.min(v,2048):''}">${v||''}</div>`).join("");$("s2048").textContent=score}function slide(arr){const v=arr.filter(Boolean);for(let i=0;i<v.length-1;i++)if(v[i]===v[i+1]){v[i]*=2;score+=v[i];void pushGlobalPoints(10);v.splice(i+1,1)}while(v.length<4)v.push(0);return v}function can(){if(b.some(x=>!x))return true;for(let r=0;r<4;r++)for(let c=0;c<4;c++){const i=r*4+c;if(c<3&&b[i]===b[i+1])return true;if(r<3&&b[i]===b[i+4])return true}return false}function move(d){if(locked)return;const before=b.join(',');if(d==='left')for(let r=0;r<4;r++)b.splice(r*4,4,...slide(b.slice(r*4,r*4+4)));if(d==='right')for(let r=0;r<4;r++)b.splice(r*4,4,...slide(b.slice(r*4,r*4+4).reverse()).reverse());if(d==='up')for(let c=0;c<4;c++){const col=slide([b[c],b[c+4],b[c+8],b[c+12]]);for(let r=0;r<4;r++)b[c+r*4]=col[r]}if(d==='down')for(let c=0;c<4;c++){const col=slide([b[c+12],b[c+8],b[c+4],b[c]]).reverse();for(let r=0;r<4;r++)b[c+r*4]=col[r]}if(b.join(',')!==before){spawn();draw();if(!can()){locked=true;addStatus(t('blocked'),"bad")}}}const key=e=>{const m={ArrowUp:"up",ArrowDown:"down",ArrowLeft:"left",ArrowRight:"right",w:"up",s:"down",a:"left",d:"right",W:"up",S:"down",A:"left",D:"right"};if(m[e.key]){e.preventDefault();move(m[e.key])}};window.addEventListener('keydown',key);onCleanup(()=>window.removeEventListener('keydown',key));$("a2048").querySelectorAll('button').forEach(x=>x.addEventListener('click',()=>move(x.dataset.d)));restart.addEventListener('click',()=>{cleanupGame();start2048()});spawn();spawn();draw()}
 
-        <div class="logo">Moemen.</div>
+function startTTT(){let b=Array(9).fill(""),over=false;const restart=baseGame("⭕ Tic-Tac-Toe",`<span class="pill">${t('player')} <b>X</b></span><span class="pill">${t('computer')} <b>O</b></span>`,`<div class="game-center"><div class="ttt-grid" id="tttGrid"></div><div id="gameStatus" class="status">${t('yourTurn')}</div></div>`);const wins=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];const win=p=>wins.some(w=>w.every(i=>b[i]===p));function finish(){if(win('X')){over=true;addStatus(t('win')+" +20 XP","good");void pushGlobalPoints(20);return true}if(win('O')){over=true;addStatus(t('lose'),"bad");return true}if(b.every(Boolean)){over=true;addStatus(t('draw'),"warn");return true}return false}function draw(){$("tttGrid").innerHTML=b.map((v,i)=>`<button class="ttt-cell" data-i="${i}" type="button">${v}</button>`).join('');document.querySelectorAll('#tttGrid .ttt-cell').forEach(c=>c.addEventListener('click',()=>{const i=Number(c.dataset.i);if(over||b[i])return;b[i]='X';draw();if(finish()||over)return;setTimeout(computer,250)}))}function computer(){const empty=b.map((x,i)=>x?-1:i).filter(i=>i>=0);if(!empty.length)return;function best(p){for(const i of empty){const copy=b.slice();copy[i]=p;if(wins.some(w=>w.every(j=>copy[j]===p)))return i}return -1}let pick=best('O');if(pick<0)pick=best('X');if(pick<0&&empty.includes(4))pick=4;if(pick<0)pick=empty[Math.floor(Math.random()*empty.length)];b[pick]='O';draw();if(!finish())addStatus(t('yourTurn'))}restart.addEventListener('click',()=>{cleanupGame();startTTT()});draw()}
 
-        <div class="menu-btn" id="menuBtn">☰</div>
+function startMemory(){const symbols=['🍎','🍋','🍒','🍇','🥝','🍉','🍀','⭐'];let deck=[...symbols,...symbols].sort(()=>Math.random()-.5),open=[],matched=[],moves=0,lock=false;const restart=baseGame("🧠 Memory",`<span class="pill">${t('score')} <b id="mMoves">0</b></span>`,`<div class="game-center"><div class="memory-grid" id="memoryGrid"></div><div id="gameStatus" class="status"></div></div>`);function draw(){$("memoryGrid").innerHTML=deck.map((s,i)=>`<button class="memory-tile ${open.includes(i)||matched.includes(i)?'open':''} ${matched.includes(i)?'matched':''}" data-i="${i}" type="button">${s}</button>`).join('');document.querySelectorAll('#memoryGrid .memory-tile').forEach(x=>x.addEventListener('click',()=>flip(Number(x.dataset.i))))}function flip(i){if(lock||open.includes(i)||matched.includes(i))return;open.push(i);draw();if(open.length<2)return;moves++;$("mMoves").textContent=moves;const[a,c]=open;if(deck[a]===deck[c]){matched.push(a,c);open=[];draw();if(matched.length===deck.length){addStatus(t('win')+" +30 XP","good");void pushGlobalPoints(30)}}else{lock=true;setTimeout(()=>{open=[];lock=false;draw()},650)}}restart.addEventListener('click',()=>{cleanupGame();startMemory()});draw()}
 
-        <div class="nav-links" id="navLinks">
+function startReaction(){let state='wait',timer=null,started=0,rounds=0,best=9999;const restart=baseGame("⚡ "+gameInfo.reaction.title[lang],`<span class="pill">${t('best')} <b id="reactBest">—</b></span>`,`<div class="game-center"><button class="reaction-box" id="reactionBox" type="button">${t('tapStart')}</button><div id="gameStatus" class="status">${t('waitGreen')}</div></div>`);const box=$("reactionBox");function reset(){state='wait';clearTimeout(timer);box.className='reaction-box';box.textContent=t('tapStart');addStatus(t('waitGreen'))}function go(){state='go';box.className='reaction-box go';box.textContent=t('fast')+'!';started=performance.now()}function start(){if(state==='go'){const ms=Math.round(performance.now()-started);rounds++;best=Math.min(best,ms);$("reactBest").textContent=best+" ms";const reward=Math.max(2,Math.min(25,Math.round(32-ms/30)));void pushGlobalPoints(reward);addStatus(ms+' ms • +'+reward+' XP','good');state='done';setTimeout(reset,900);return}if(state!=='wait')return;state='ready';box.className='reaction-box ready';box.textContent='…';timer=setTimeout(go,900+Math.random()*2300)}box.addEventListener('click',start);restart.addEventListener('click',()=>{cleanupGame();startReaction()});reset()}
 
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#games">Games</a>
-            <a href="#stats">Stats</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+function startRPS(){let round=0;const choices=[['✊','rock'],['✋','paper'],['✌️','scissors']];const restart=baseGame("✊ Rock Paper Scissors",`<span class="pill">${t('score')} <b id="rpsScore">0</b></span>`,`<div class="game-center"><div class="choice-row" id="rpsChoices"></div><div id="gameStatus" class="status"></div></div>`);function draw(){
+$("rpsChoices").innerHTML=choices.map(([e,k])=>{const label=k==='rock'?t('rock'):k==='paper'?t('paper'):t('scissors');return `<button class="choice" data-c="${k}" type="button">${e} ${label}</button>`}).join('');document.querySelectorAll('#rpsChoices .choice').forEach(b=>b.addEventListener('click',()=>play(b.dataset.c)))}function play(p){const c=choices[Math.floor(Math.random()*3)][1];round++;let result=t('draw'),reward=5;if(p!==c){if((p==='rock'&&c==='scissors')||(p==='paper'&&c==='rock')||(p==='scissors'&&c==='paper')){result=t('win');reward=10}else{result=t('lose');reward=2}}else reward=4;$("rpsScore").textContent=round;void pushGlobalPoints(reward);addStatus(result+" • +"+reward+" XP",result===t('win')?'good':result===t('lose')?'bad':'warn')}restart.addEventListener('click',()=>{cleanupGame();startRPS()});draw()}
 
-            <button class="theme-btn" id="themeBtn">🌙</button>
+function startAim(){let score=0,time=10,active=false,timer=null;const restart=baseGame("🎯 Aim Trainer",`<span class="pill">${t('score')} <b id="aimScore">0</b></span><span class="pill">${t('time')} <b id="aimTime">10</b></span>`,`<div class="game-center"><div class="aim-area" id="aimArea"></div><div id="gameStatus" class="status">${t('tapStart')}</div></div>`,t('mouseTouch'));const area=$("aimArea");function spawn(){if(!active)return;const old=area.querySelector('.aim-target');if(old)old.remove();const btn=document.createElement('button');btn.className='aim-target';btn.type='button';btn.style.left=Math.max(0,Math.random()*(area.clientWidth-54))+'px';btn.style.top=Math.max(0,Math.random()*(area.clientHeight-54))+'px';btn.addEventListener('click',e=>{e.stopPropagation();score++;$("aimScore").textContent=score;void pushGlobalPoints(5);spawn()});area.appendChild(btn)}function start(){if(active)return;score=0;time=10;active=true;$("aimScore").textContent=0;$("aimTime").textContent=10;addStatus(t('good'),'good');spawn();timer=setInterval(()=>{time--;$("aimTime").textContent=time;if(time<=0){clearInterval(timer);active=false;const old=area.querySelector('.aim-target');old?.remove();addStatus(t('gameOver')+" • +"+score*5+" XP",'warn')}},1000)}area.addEventListener('click',()=>{if(!active)start()});restart.addEventListener('click',()=>{cleanupGame();startAim()});onCleanup(()=>clearInterval(timer))}
 
-        </div>
+function startClicker(){let playing=false,clicks=0,time=10,timer=null;const restart=baseGame("🖱️ Click Rush",`<span class="pill">${t('clicks')} <b id="cScore">0</b></span><span class="pill">${t('time')} <b id="cTime">10</b></span>`,`<div class="game-center"><button class="click-btn" id="clickBtn" type="button">${t('click')}</button><div id="gameStatus" class="status">${t('tapStart')}</div></div>`);const btn=$("clickBtn");function start(){playing=true;clicks=0;time=10;$("cScore").textContent=0;$("cTime").textContent=10;addStatus(t('good'),'good');clearInterval(timer);timer=setInterval(()=>{time--;$("cTime").textContent=time;if(time<=0){clearInterval(timer);playing=false;const reward=Math.min(40,clicks);void pushGlobalPoints(reward);addStatus(clicks+' '+t('clicks')+' • +'+reward+' XP','good')}},1000)}btn.addEventListener('click',()=>{if(!playing){start();return}clicks++;$("cScore").textContent=clicks});restart.addEventListener('click',()=>{cleanupGame();startClicker()});onCleanup(()=>clearInterval(timer))}
 
-    </nav>
+function startFlappy(){let raf=0,running=false,over=false,score=0,bird={x:100,y:190,vy:0},pipes=[],last=0,spawnT=0;const restart=baseGame("🐤 Flappy",`<span class="pill">${t('score')} <b id="fScore">0</b></span>`,`<div class="game-center"><canvas id="fCanvas" class="flappy-canvas" width="640" height="400"></canvas><div id="gameStatus" class="status">${t('spaceFlap')}</div></div>`);const c=$("fCanvas"),ctx=c.getContext('2d');function reset(){cancelAnimationFrame(raf);running=false;over=false;score=0;bird={x:100,y:190,vy:0};pipes=[];spawnT=0;last=performance.now();$("fScore").textContent=0;draw()}function draw(){ctx.clearRect(0,0,c.width,c.height);ctx.fillStyle='#86d9ff';ctx.fillRect(0,0,c.width,c.height);ctx.fillStyle='#85c76e';ctx.fillRect(0,c.height-120,c.width,120);ctx.fillStyle='#ffd166';ctx.beginPath();ctx.arc(bird.x,bird.y,18,0,Math.PI*2);ctx.fill();ctx.fillStyle='#35a653';pipes.forEach(p=>{ctx.fillRect(p.x,0,54,p.top);ctx.fillRect(p.x,p.top+p.gap,54,c.height-(p.top+p.gap)-120)})}function spawn(){pipes.push({x:c.width,top:45+Math.random()*150,gap:120,passed:false})}function frame(now){if(!running)return;const dt=Math.min(.03,(now-last)/1000);last=now;bird.vy+=820*dt;bird.y+=bird.vy*dt;spawnT-=dt;if(spawnT<=0){spawn();spawnT=1.65}pipes.forEach(p=>p.x-=210*dt);pipes.forEach(p=>{if(!p.passed&&p.x+54<bird.x){p.passed=true;score++;$("fScore").textContent=score;void pushGlobalPoints(10)}});pipes=pipes.filter(p=>p.x>-70);const hitG=bird.y+18>=c.height-120||bird.y-18<=0;const hitP=pipes.some(p=>bird.x+18>p.x&&bird.x-18<p.x+54&&(bird.y-18<p.top||bird.y+18>p.top+p.gap));if(hitG||hitP){running=false;over=true;addStatus(t('gameOver')+" • "+score,'bad');return}draw();raf=requestAnimationFrame(frame)}function flap(){if(!running){if(over)reset();running=true;addStatus(t('good'),'good');last=performance.now();raf=requestAnimationFrame(frame)}bird.vy=-300}c.addEventListener('pointerdown',flap);const key=e=>{if(e.code==='Space'){e.preventDefault();flap()}};window.addEventListener('keydown',key);onCleanup(()=>{cancelAnimationFrame(raf);window.removeEventListener('keydown',key)});restart.addEventListener('click',()=>{cleanupGame();startFlappy()});reset()}
 
+function startBreakout(){let raf=0,running=false,score=0,lives=3,paddle=270,ball={x:320,y:320,vx:190,vy:-190},bricks=[];const restart=baseGame("🧱 Breakout",`<span class="pill">${t('score')} <b id="bScore">0</b></span><span class="pill">${t('lives')} <b id="bLives">3</b></span>`,`<div class="game-center"><canvas class="breakout-canvas" id="bCanvas" width="640" height="390"></canvas><div class="pong-controls"><button class="btn btn-small" id="bLeft" type="button">◀</button><button class="btn btn-small" id="bRight" type="button">▶</button></div><div id="gameStatus" class="status">${t('tapStart')}</div></div>`,t('useArrows'));const c=$("bCanvas"),ctx=c.getContext('2d');function build(){bricks=[];for(let r=0;r<4;r++)for(let x=0;x<9;x++)bricks.push({x:16+x*69,y:28+r*25,w:58,h:16,alive:true})}function draw(){ctx.clearRect(0,0,c.width,c.height);ctx.fillStyle='#080b14';ctx.fillRect(0,0,c.width,c.height);ctx.fillStyle='#7c5cff';bricks.forEach(b=>b.alive&&ctx.fillRect(b.x,b.y,b.w,b.h));ctx.fillStyle='#f7f9ff';ctx.fillRect(paddle,c.height-22,100,10);ctx.fillRect(ball.x-6,ball.y-6,12,12)}function reset(){cancelAnimationFrame(raf);running=false;score=0;lives=3;paddle=270;ball={x:320,y:320,vx:190,vy:-190};build();$("bScore").textContent=0;$("bLives").textContent=3;draw()}let last=0;function frame(now){if(!running)return;const dt=Math.min(.03,(now-last)/1000);last=now;ball.x+=ball.vx*dt;ball.y+=ball.vy*dt;if(ball.x<6||ball.x>c.width-6)ball.vx*=-1;if(ball.y<6)ball.vy=Math.abs(ball.vy);if(ball.y>c.height-28&&ball.x>paddle&&ball.x<paddle+100&&ball.vy>0){ball.vy=-Math.abs(ball.vy);ball.vx+=(ball.x-(paddle+50))*.7}bricks.forEach(b=>{if(!b.alive)return;if(ball.x+6>b.x&&ball.x-6<b.x+b.w&&ball.y+6>b.y&&ball.y-6<b.y+b.h){b.alive=false;ball.vy*=-1;score++;$("bScore").textContent=score;void pushGlobalPoints(2)}});if(bricks.every(b=>!b.alive)){running=false;void pushGlobalPoints(25);addStatus(t('win')+' +25 XP','good')}if(ball.y>c.height+10){lives--;$("bLives").textContent=lives;if(lives<=0){running=false;addStatus(t('gameOver'),'bad');return}ball={x:320,y:320,vx:190*(Math.random()<.5?-1:1),vy:-190}}draw();raf=requestAnimationFrame(frame)}function start(){if(running)return;running=true;last=performance.now();addStatus(t('good'),'good');raf=requestAnimationFrame(frame)}c.addEventListener('pointerdown',start);$("bLeft").addEventListener('click',()=>paddle=Math.max(0,paddle-35));$("bRight").addEventListener('click',()=>paddle=Math.min(c.width-100,paddle+35));const key=e=>{if(e.key==='ArrowLeft'||e.key.toLowerCase()==='a')paddle=Math.max(0,paddle-28);if(e.key==='ArrowRight'||e.key.toLowerCase()==='d')paddle=Math.min(c.width-100,paddle+28);if(e.code==='Space'){e.preventDefault();start()}};window.addEventListener('keydown',key);onCleanup(()=>{cancelAnimationFrame(raf);window.removeEventListener('keydown',key)});restart.addEventListener('click',()=>{cleanupGame();startBreakout()});reset()}
 
-    <!-- HOME -->
+function startMines(){const N=9,M=10;let mines=new Set(),revealed=new Set(),flags=new Set(),over=false;const restart=baseGame("💣 "+gameInfo.mines.title[lang],`<span class="pill">${t('flag')} <b id="mFlags">0/${M}</b></span>`,`<div class="game-center"><div class="mine-grid" id="mineGrid"></div><div id="gameStatus" class="status"></div></div>`,lang==='ar'?"Tap = reveal • Right click = flag":"Tap = reveal • Right click = flag");function neigh(i){const r=Math.floor(i/N),c=i%N,a=[];for(let dr=-1;dr<=1;dr++)for(let dc=-1;dc<=1;dc++){if(!dr&&!dc)continue;const rr=r+dr,cc=c+dc;if(rr>=0&&rr<N&&cc>=0&&cc<N)a.push(rr*N+cc)}return a}function count(i){return neigh(i).filter(x=>mines.has(x)).length}function setup(){mines.clear();revealed.clear();flags.clear();over=false;while(mines.size<M)mines.add(Math.floor(Math.random()*81));draw()}function reveal(i){if(over||flags.has(i)||revealed.has(i))return;if(mines.has(i)){over=true;revealed=new Set(Array.from({length:81},(_,x)=>x));draw();addStatus(t('mine'),'bad');return}revealed.add(i);if(count(i)===0)neigh(i).forEach(reveal);draw();if(revealed.size>=81-M){over=true;void pushGlobalPoints(50);addStatus(t('win')+' +50 XP','good')}}function flagIt(i,e){e.preventDefault();if(over||revealed.has(i))return;if(flags.has(i))flags.delete(i);else if(flags.size<M)flags.add(i);$("mFlags").textContent=flags.size+'/'+M;draw()}function draw(){$("mineGrid").innerHTML=Array.from({length:81},(_,i)=>{const rev=revealed.has(i),fl=flags.has(i),v=rev?(mines.has(i)?'💣':String(count(i)||'')):(fl?'⚑':'');return `<button class="mine-cell ${rev?'revealed ':''}${fl?'flagged':''}" data-i="${i}" type="button">${v}</button>`}).join('');document.querySelectorAll('#mineGrid .mine-cell').forEach(x=>{const i=Number(x.dataset.i);x.addEventListener('click',()=>reveal(i));x.addEventListener('contextmenu',e=>flagIt(i,e))})}restart.addEventListener('click',()=>{cleanupGame();startMines()});setup()}
 
-    <section id="home">
+function startQuiz(){const qs={en:[['Which tag creates a link in HTML?',['<a>','<link>','<url>','<href>'],0],['Which language mainly adds behavior to a webpage?',['HTML','CSS','JavaScript','SQL'],2],['What does CSS control?',['Page style','Database','Server','Git history'],0],['Which is a Python file extension?',['.html','.py','.css','.js'],1],['What is 8 × 8?',['48','56','64','72'],2],['In games, FPS often means…',['Frames per second','Files per save','Fast player stats','Final points'],0]],fr:[['Quelle balise crée un lien HTML ?',['<a>','<link>','<url>','<href>'],0],['Quel langage ajoute surtout le comportement ?',['HTML','CSS','JavaScript','SQL'],2],['Que contrôle CSS ?',['Le style','La base de données','Le serveur','Git'],0],['Extension d’un fichier Python ?',['.html','.py','.css','.js'],1],['Combien font 8 × 8 ?',['48','56','64','72'],2],['FPS signifie souvent…',['Images par seconde','Fichiers par sauvegarde','Stats joueur','Score final'],0]],ar:[['شنية التاغ اللي تعمل رابط في HTML؟',['<a>','<link>','<url>','<href>'],0],['شنية اللغة اللي تضيف behavior للصفحة؟',['HTML','CSS','JavaScript','SQL'],2],['شنية يتحكم فيها CSS؟',['الستايل','قاعدة البيانات','السيرفر','Git'],0],['امتداد ملف Python؟',['.html','.py','.css','.js'],1],['8 × 8 يساوي؟',['48','56','64','72'],2],['FPS غالبا معناها؟',['Frames per second','Files per save','Fast player stats','Final points'],0]]}[lang];let i=0,score=0;const restart=baseGame("❓ "+gameInfo.quiz.title[lang],`<span class="pill">${t('next')} <b id="qNum">1/${qs.length}</b></span><span class="pill">${t('score')} <b id="qScore">0</b></span>`,`<div class="game-center"><div class="quiz-card" id="quizCard"></div></div>`);function draw(){const q=qs[i];$("quizCard").innerHTML=`<div class="quiz-question">${esc(q[0])}</div>${q[1].map((o,n)=>`<button class="quiz-option" data-i="${n}" type="button">${esc(o)}</button>`).join('')}<div id="gameStatus" class="status"></div>`;$("qNum").textContent=(i+1)+'/'+qs.length;$("qScore").textContent=score;document.querySelectorAll('#quizCard .quiz-option').forEach(x=>x.addEventListener('click',()=>answer(Number(x.dataset.i))))}function answer(n){const q=qs[i];if(n===q[2]){score++;void pushGlobalPoints(10);addStatus(t('correct')+' +10 XP','good')}else addStatus(t('wrong'),'bad');i++;if(i>=qs.length){setTimeout(()=>addStatus(t('quizFinish')+' '+score+'/'+qs.length,'good'),400);return}setTimeout(draw,450)}restart.addEventListener('click',()=>{cleanupGame();startQuiz()});draw()}
 
-        <div class="hero">
+function startBlock(){
+let board=Array(64).fill(null),score=0,selected=0,gameOver=false;const shapes=[[[0,0]],[[0,0],[1,0]],[[0,0],[0,1]],[[0,0],[1,0],[0,1],[1,1]],[[0,0],[1,0],[2,0]],[[0,0],[0,1],[0,2]],[[0,0],[1,0],[1,1]],[[0,0],[1,0],[2,0],[1,1]],[[0,0],[0,1],[1,1],[2,1]],[[0,0],[1,0],[1,1],[2,1]]];let pieces=[];const restart=baseGame("🧩 "+gameInfo.block.title[lang],`<span class="pill">${t('score')} <b id="blScore">0</b></span>`,`<div class="block-layout"><div class="game-center"><div class="block-board" id="blockBoard"></div><div id="gameStatus" class="status"></div></div><div class="piece-panel"><h4 style="margin-bottom:10px">${t('next')}</h4><div class="piece-list" id="pieceList"></div><div class="block-help">${lang==='ar'?'اختار قطعة وبعد اضغط على خانة البداية. تتكسر السطور والخانات الكاملة.':'Select a piece, then tap the starting cell. Full rows and columns clear.'}</div></div></div>`);function refill(){pieces=Array.from({length:3},()=>shapes[Math.floor(Math.random()*shapes.length)]);selected=0;drawPieces()}function canPlace(shape,r,c){return shape.every(([x,y])=>r+y<8&&c+x<8&&r+y>=0&&c+x>=0&&!board[(r+y)*8+(c+x)])}function place(shape,r,c){if(!canPlace(shape,r,c))return false;shape.forEach(([x,y])=>board[(r+y)*8+(c+x)]='#');score+=shape.length*2;void pushGlobalPoints(Math.max(1,shape.length));let clear=0;for(let rr=0;rr<8;rr++){if(board.slice(rr*8,rr*8+8).every(Boolean)){for(let cc=0;cc<8;cc++)board[rr*8+cc]=null;clear++}}for(let cc=0;cc<8;cc++){let full=true;for(let rr=0;rr<8;rr++)if(!board[rr*8+cc]){full=false;break}if(full){for(let rr=0;rr<8;rr++)board[rr*8+cc]=null;clear++}}if(clear){const bonus=clear*10;score+=bonus;void pushGlobalPoints(bonus)}$("blScore").textContent=score;refill();if(!pieces.some(p=>{for(let r=0;r<8;r++)for(let c=0;c<8;c++)if(canPlace(p,r,c))return true;return false})){gameOver=true;addStatus(t('blocked'),'bad')}draw();return true}function draw(){const colors=['#7c5cff','#00d4ff','#39e59a','#ff607e','#ffd166'];$("blockBoard").innerHTML=board.map((v,i)=>`<button class="block-cell ${v?'filled':''}" data-i="${i}" type="button" style="${v?'background:'+colors[Math.floor(i*3%colors.length)]:''}"></button>`).join('');document.querySelectorAll('#blockBoard .block-cell').forEach(x=>x.addEventListener('click',()=>{if(gameOver)return;const i=Number(x.dataset.i),r=Math.floor(i/8),c=i%8;place(pieces[selected],r,c)}))}function drawPieces(){const wrap=$("pieceList");wrap.innerHTML=pieces.map((s,i)=>`<button class="piece-btn ${i===selected?'active':''}" data-i="${i}" type="button"><div class="mini-grid">${Array.from({length:25},(_,n)=>{const r=Math.floor(n/5),c=n%5,on=s.some(([x,y])=>x===c-1&&y===r-1);return `<span class="mini-cell ${on?'on':''}"></span>`}).join('')}</div></button>`).join('');wrap.querySelectorAll('.piece-btn').forEach(x=>x.addEventListener('click',()=>{selected=Number(x.dataset.i);drawPieces()}))}restart.addEventListener('click',()=>{cleanupGame();startBlock()});refill();draw()
+}
 
-            <small>Student • Developer • Content Creator</small>
+function startPong(){let raf=0,running=false,playerY=180,aiY=180,ball={x:350,y:200,vx:220,vy:150},ps=0,as=0,last=0;const restart=baseGame("🏓 Pong",`<span class="pill">${t('player')} <b id="pScore">0</b></span><span class="pill">${t('computer')} <b id="aiScore">0</b></span>`,`<div class="game-center"><canvas id="pongCanvas" class="pong-canvas" width="700" height="410"></canvas><div class="pong-controls"><button class="btn btn-small" id="pUp" type="button">▲</button><button class="btn btn-small" id="pDown" type="button">▼</button></div><div id="gameStatus" class="status">${t('tapStart')}</div></div>`,t('useArrows'));const c=$("pongCanvas"),ctx=c.getContext('2d');function resetBall(dir=1){ball={x:c.width/2,y:c.height/2,vx:dir*220,vy:(Math.random()<.5?-1:1)*(90+Math.random()*120)}}function reset(){cancelAnimationFrame(raf);running=false;ps=0;as=0;playerY=180;aiY=180;resetBall(1);$("pScore").textContent=0;$("aiScore").textContent=0;draw()}function draw(){ctx.clearRect(0,0,c.width,c.height);ctx.fillStyle='#07101e';ctx.fillRect(0,0,c.width,c.height);ctx.strokeStyle='rgba(255,255,255,.12)';ctx.setLineDash([10,10]);ctx.beginPath();ctx.moveTo(c.width/2,0);ctx.lineTo(c.width/2,c.height);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='#f7f9ff';ctx.fillRect(22,playerY,10,70);ctx.fillRect(c.width-32,aiY,10,70);ctx.beginPath();ctx.arc(ball.x,ball.y,7,0,Math.PI*2);ctx.fill()}let moveY=0;function frame(now){if(!running)return;const dt=Math.min(.03,(now-last)/1000);last=now;playerY=Math.max(0,Math.min(c.height-70,playerY+moveY*330*dt));const target=ball.y-35;aiY+=(target-aiY)*Math.min(1,dt*3.5);ball.x+=ball.vx*dt;ball.y+=ball.vy*dt;if(ball.y<7||ball.y>c.height-7)ball.vy*=-1;if(ball.x<32&&ball.x>15&&ball.y>playerY&&ball.y<playerY+70)ball.vx=Math.abs(ball.vx)*1.03;if(ball.x>c.width-32&&ball.x<c.width-15&&ball.y>aiY&&ball.y<aiY+70)ball.vx=-Math.abs(ball.vx)*1.03;if(ball.x<0){as++;$("aiScore").textContent=as;void pushGlobalPoints(3);resetBall(-1)}if(ball.x>c.width){ps++;$("pScore").textContent=ps;void pushGlobalPoints(10);resetBall(1)}if(ps>=5||as>=5){running=false;addStatus(ps>as?t('win'):' '+t('lose'),'good');return}draw();raf=requestAnimationFrame(frame)}function start(){if(running)return;running=true;last=performance.now();raf=requestAnimationFrame(frame);addStatus(t('good'),'good')}const key=e=>{if(e.key==='ArrowUp'||e.key.toLowerCase()==='w'){e.preventDefault();moveY=-1}else if(e.key==='ArrowDown'||e.key.toLowerCase()==='s'){e.preventDefault();moveY=1}else if(e.code==='Space'){e.preventDefault();start()}};const up=()=>moveY=-1,down=()=>moveY=1,stop=()=>moveY=0;window.addEventListener('keydown',key);window.addEventListener('keyup',e=>{if(['ArrowUp','ArrowDown','w','s','W','S'].includes(e.key))moveY=0});$("pUp").addEventListener('pointerdown',up);$("pUp").addEventListener('pointerup',stop);$("pUp").addEventListener('pointerleave',stop);$("pDown").addEventListener('pointerdown',down);$("pDown").addEventListener('pointerup',stop);$("pDown").addEventListener('pointerleave',stop);c.addEventListener('pointerdown',start);onCleanup(()=>{cancelAnimationFrame(raf);window.removeEventListener('keydown',key)});restart.addEventListener('click',()=>{cleanupGame();startPong()});reset()}
 
-            <h1>
-                Hi, I'm <span>Moemen Brinsi</span>
-            </h1>
+function startBlackjack(){
+let deck=[],player=[],dealer=[],finished=false,stats=JSON.parse(localStorage.getItem('mb-bj-stats')||'{"wins":0,"losses":0,"draws":0}');
+const restart=baseGame("🃏 Blackjack",`<span class="pill">W <b id="bjW">${stats.wins}</b></span><span class="pill">L <b id="bjL">${stats.losses}</b></span><span class="pill">D <b id="bjD">${stats.draws}</b></span>`,`<div class="bj-table"><div class="note" style="margin-bottom:14px">${t('rules')}</div><div class="bj-section"><div class="bj-label"><span>${t('dealer')}</span><span class="bj-total" id="bjDealerTotal">?</span></div><div class="bj-cards" id="bjDealerCards"></div></div><div class="bj-divider"></div><div class="bj-section"><div class="bj-label"><span>${t('player')}</span><span class="bj-total" id="bjPlayerTotal">0</span></div><div class="bj-cards" id="bjPlayerCards"></div></div><div id="bjResult" class="bj-result"></div><div class="bj-actions"><button class="btn btn-primary" id="bjHit" type="button">${t('hit')}</button><button class="btn" id="bjStand" type="button">${t('stand')}</button><button class="btn" id="bjNew" type="button">${t('newRound')}</button></div><div class="bj-scoreboard"><div class="bj-stat"><strong id="bjsw">${stats.wins}</strong><span>${t('wins')}</span></div><div class="bj-stat"><strong id="bjsl">${stats.losses}</strong><span>${t('losses')}</span></div><div class="bj-stat"><strong id="bjsd">${stats.draws}</strong><span>${t('draws')}</span></div><div class="bj-stat"><strong id="bjsx">${points}</strong><span>XP</span></div></div></div>`);function makeDeck(){const suits=[['♠','black'],['♥','red'],['♦','red'],['♣','black']],ranks=[['A',11],['2',2],['3',3],['4',4],['5',5],['6',6],['7',7],['8',8],['9',9],['10',10],['J',10],['Q',10],['K',10]],d=[];for(const [s,color] of suits)for(const [n,v] of ranks)d.push({suit:s,color,name:n,value:v});return d.sort(()=>Math.random()-.5)}function drawCard(){return deck.pop()}function total(hand){let v=hand.reduce((s,c)=>s+c.value,0),aces=hand.filter(c=>c.name==='A').length;while(v>21&&aces){v-=10;aces--}return v}function cardHTML(c,hidden=false){if(hidden)return '<div class="bj-card bj-hidden"></div>';return `<div class="bj-card ${c.color}"><div class="bj-card-top">${c.name}${c.suit}</div><div class="bj-card-suit">${c.suit}</div><div class="bj-card-bottom">${c.name}</div></div>`}function render(hide=true){$("bjPlayerCards").innerHTML=player.map(c=>cardHTML(c)).join('');$("bjPlayerTotal").textContent=total(player);$("bjDealerCards").innerHTML=hide?cardHTML(dealer[0])+cardHTML(null,true):dealer.map(c=>cardHTML(c)).join('');$("bjDealerTotal").textContent=hide?'?':total(dealer)}async function result(message,type){finished=true;$("bjResult").textContent=message;$("bjResult").className='bj-result '+type;$("bjHit").disabled=true;$("bjStand").disabled=true;if(type==='win'){stats.wins++;const reward=message.includes('BLACKJACK')?30:20;await pushGlobalPoints(reward)}else if(type==='lose')stats.losses++;else stats.draws++;localStorage.setItem('mb-bj-stats',JSON.stringify(stats));$("bjsw").textContent=stats.wins;$("bjsl").textContent=stats.losses;$("bjsd").textContent=stats.draws;$("bjsx").textContent=points;}
+function newRound(){deck=makeDeck();player=[drawCard(),drawCard()];dealer=[drawCard(),drawCard()];finished=false;$("bjResult").textContent='';$("bjResult").className='bj-result';$("bjHit").disabled=false;$("bjStand").disabled=false;render(true);const pv=total(player);if(pv===21)void result(t('blackjack')+' +30 XP','win')}
+async function hit(){if(finished)return;player.push(drawCard());const v=total(player);render(true);if(v>21)await result(t('bust'),'lose');else if(v===21)await stand()}
+async function stand(){if(finished)return;render(false);await new Promise(r=>setTimeout(r,450));while(total(dealer)<17){dealer.push(drawCard());render(false);await new Promise(r=>setTimeout(r,260))}const pv=total(player),dv=total(dealer);if(dv>21)await result(t('win')+' +20 XP','win');else if(pv>dv)await result(t('win')+' +20 XP','win');else if(pv<dv)await result(t('lose'),'lose');else await result(t('draw'),'draw')}
+$("bjHit").addEventListener('click',()=>void hit());$("bjStand").addEventListener('click',()=>void stand());$("bjNew").addEventListener('click',newRound);restart.addEventListener('click',()=>{cleanupGame();startBlackjack()});newRound()
+}
 
-            <div class="typing">
-                I'm a <span id="typingText"></span>
-            </div>
+function startWheel(){const rewards=[5,10,15,20,25,30,40,60];const colors=['#7c5cff','#00d4ff','#39e59a','#ff607e','#ffd166','#8b6cff','#19bbff','#49d7a4'];let spinning=false,totalBonus=0;const restart=baseGame("🎡 XP Wheel",`<span class="pill">${t('bonus')} <b id="wBonus">0</b> XP</span>`,`<div class="wheel-wrap"><div class="wheel-arrow">▼</div><div id="wheel" class="wheel"></div><button class="spin-center" id="spinBtn" type="button">${t('spin')}</button><div id="gameStatus" class="status">${t('funOnly')}</div><div class="wheel-legend">${rewards.map(x=>`<div class="legend-item">+${x} XP</div>`).join('')}</div></div>`);const wheel=$("wheel");wheel.style.background=`conic-gradient(${colors.map((c,i)=>`${c} ${(i*45)}deg ${(i+1)*45}deg`).join(',')})`;const btn=$("spinBtn");btn.addEventListener('click',async()=>{if(spinning)return;spinning=true;btn.disabled=true;const reward=rewards[Math.floor(Math.random()*rewards.length)];const angle=720+(rewards.indexOf(reward)*45)+22.5;wheel.style.transition='transform 1.8s cubic-bezier(.2,.9,.2,1)';wheel.style.transform=`rotate(${angle}deg)`;await new Promise(r=>setTimeout(r,1850));totalBonus+=reward;$("wBonus").textContent=totalBonus;await pushGlobalPoints(reward);addStatus('+'+reward+' XP','good');spinning=false;btn.disabled=false;wheel.style.transition='none';wheel.style.transform=`rotate(${angle%360}deg)`});restart.addEventListener('click',()=>{cleanupGame();startWheel()})}
 
-            <p>
-                Welcome to my official website.
-                Here you can discover my interests, projects,
-                games and everything I'm learning.
-            </p>
+function startColor(){const colors=[['RED','#ff607e'],['BLUE','#4c9fff'],['GREEN','#39e59a'],['YELLOW','#ffd166']];let score=0,time=15,playing=false,timer=null,target=null;const restart=baseGame("🎨 "+gameInfo.color.title[lang],`<span class="pill">${t('score')} <b id="colScore">0</b></span><span class="pill">${t('time')} <b id="colTime">15</b></span>`,`<div class="game-center"><div class="color-prompt" id="colorPrompt">${t('tapStart')}</div><div class="color-buttons" id="colorButtons"></div><div id="gameStatus" class="status"></div></div>`);function next(){target=colors[Math.floor(Math.random()*colors.length)];$("colorPrompt").textContent=target[0];$("colorPrompt").style.color=colors[Math.floor(Math.random()*colors.length)][1]}function draw(){
+$("colorButtons").innerHTML=colors.map(c=>`<button type="button" class="color-choice" data-c="${c[0]}" style="background:${c[1]}">${c[0]}</button>`).join('');document.querySelectorAll('#colorButtons .color-choice').forEach(b=>b.addEventListener('click',()=>{if(!playing)return;const ok=b.dataset.c===target[0];if(ok){score++;void pushGlobalPoints(5);addStatus(t('correct')+' +5 XP','good')}else addStatus(t('wrong'),'bad');$("colScore").textContent=score;next()}))}function start(){playing=true;score=0;time=15;$("colScore").textContent=0;$("colTime").textContent=15;next();draw();clearInterval(timer);timer=setInterval(()=>{time--;$("colTime").textContent=time;if(time<=0){clearInterval(timer);playing=false;addStatus(t('gameOver')+' • +'+score*5+' XP','warn')}},1000);addStatus(t('good'),'good')}restart.addEventListener('click',()=>{cleanupGame();startColor()});draw();$("colorPrompt").addEventListener('click',start)}
 
-            <div class="buttons">
-
-                <a href="#about" class="btn btn-primary">
-                    Discover More
-                </a>
-
-                <a href="#contact" class="btn btn-outline">
-                    Contact Me
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ABOUT -->
-
-    <section id="about">
-
-        <h2 class="section-title">
-            About <span>Me</span>
-        </h2>
-
-        <div class="about-grid">
-
-            <div class="info-card">
-                <div class="icon">🎓</div>
-                <h3>Student</h3>
-                <p>Learning new things every day.</p>
-            </div>
-
-            <div class="info-card">
-                <div class="icon">💻</div>
-                <h3>Developer</h3>
-                <p>Learning Web Development and Python.</p>
-            </div>
-
-            <div class="info-card">
-                <div class="icon">🎥</div>
-                <h3>Content Creator</h3>
-                <p>Creating and sharing content online.</p>
-            </div>
-
-            <div class="info-card">
-                <div class="icon">🎮</div>
-                <h3>Gamer</h3>
-                <p>Gaming is one of my biggest interests.</p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- WHAT I DO -->
-
-    <section>
-
-        <h2 class="section-title">
-            What I <span>Do</span>
-        </h2>
-
-        <div class="cards">
-
-            <div class="card">
-
-                <div class="card-icon">💻</div>
-
-                <h3>Developer</h3>
-
-                <p>
-                    I'm learning HTML, CSS, JavaScript and Python
-                    while building my own projects.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="card-icon">🎮</div>
-
-                <h3>Gamer</h3>
-
-                <p>
-                    I enjoy playing games such as Valorant,
-                    CS2, eFootball and open-world games.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="card-icon">🎬</div>
-
-                <h3>Content Creator</h3>
-
-                <p>
-                    I'm interested in creating gaming and
-                    technology content for social media.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- GAMES -->
-
-    <section id="games">
-
-        <h2 class="section-title">
-            Games I <span>Play</span>
-        </h2>
-
-        <div class="games-grid">
-
-            <div class="game">
-                <div class="game-icon">🎯</div>
-                <h3>Valorant</h3>
-                <p>Competitive FPS</p>
-            </div>
-
-            <div class="game">
-                <div class="game-icon">🔫</div>
-                <h3>CS2</h3>
-                <p>Competitive Shooter</p>
-            </div>
-
-            <div class="game">
-                <div class="game-icon">⚽</div>
-                <h3>eFootball</h3>
-                <p>Football Game</p>
-            </div>
-
-            <div class="game">
-                <div class="game-icon">🌎</div>
-                <h3>Open World</h3>
-                <p>Exploration & Adventure</p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- STATS -->
-
-    <section id="stats">
-
-        <h2 class="section-title">
-            My <span>Stats</span>
-        </h2>
-
-        <div class="stats">
-
-            <div class="stat">
-                <h2>17</h2>
-                <p>Years Old</p>
-            </div>
-
-            <div class="stat">
-                <h2>3+</h2>
-                <p>Main Interests</p>
-            </div>
-
-            <div class="stat">
-                <h2>3+</h2>
-                <p>Games I Play</p>
-            </div>
-
-            <div class="stat">
-                <h2>∞</h2>
-                <p>Ideas</p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- SKILLS -->
-
-    <section>
-
-        <h2 class="section-title">
-            My <span>Skills</span>
-        </h2>
-
-        <div class="skills">
-
-            <div class="skill">HTML</div>
-            <div class="skill">CSS</div>
-            <div class="skill">JavaScript</div>
-            <div class="skill">Python</div>
-            <div class="skill">Web Development</div>
-            <div class="skill">Content Creation</div>
-            <div class="skill">Gaming</div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PROJECTS -->
-
-    <section id="projects">
-
-        <h2 class="section-title">
-            My <span>Projects</span>
-        </h2>
-
-        <div class="projects">
-
-            <div class="project">
-
-                <h3>🌐 Personal Website</h3>
-
-                <p>
-                    My first personal website built with
-                    HTML, CSS and JavaScript.
-                </p>
-
-                <span class="status">
-                    In Progress
-                </span>
-
-            </div>
-
-
-            <div class="project">
-
-                <h3>🐍 Python Projects</h3>
-
-                <p>
-                    Learning Python and building small
-                    projects while improving my skills.
-                </p>
-
-                <span class="status">
-                    Learning
-                </span>
-
-            </div>
-
-
-            <div class="project">
-
-                <h3>🚀 Future Projects</h3>
-
-                <p>
-                    More websites, applications and
-                    programming projects coming soon.
-                </p>
-
-                <span class="status">
-                    Coming Soon
-                </span>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CONTENT -->
-
-    <section>
-
-        <h2 class="section-title">
-            My <span>Content</span>
-        </h2>
-
-        <div class="social-box">
-
-            <h2>Follow Me on Instagram</h2>
-
-            <p>
-                Follow me to see my latest content,
-                gaming moments and future projects.
-            </p>
-
-            <a
-                href="https://www.instagram.com/moe._.mn/"
-                target="_blank"
-                class="instagram"
-            >
-                📸 @moe._.mn
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- CONTACT -->
-
-    <section id="contact">
-
-        <h2 class="section-title">
-            Contact <span>Me</span>
-        </h2>
-
-        <div class="contact-container">
-
-            <div class="contact-card">
-
-                <div class="icon">📸</div>
-
-                <h3>Instagram</h3>
-
-                <p>@moe._.mn</p>
-
-                <a
-                    href="https://www.instagram.com/moe._.mn/"
-                    target="_blank"
-                    class="btn btn-primary"
-                >
-                    Open Instagram
-                </a>
-
-            </div>
-
-
-            <div class="contact-card">
-
-                <div class="icon">📧</div>
-
-                <h3>Email</h3>
-
-                <p>moemnbrinsi@gmail.com</p>
-
-                <a
-                    href="mailto:moemnbrinsi@gmail.com"
-                    class="btn btn-primary"
-                >
-                    Send Email
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        <p>
-            © 2026 Moemen Brinsi. All rights reserved.
-        </p>
-
-    </footer>
-
-
-    <!-- JAVASCRIPT -->
-
-    <script>
-
-        // THEME
-
-        const themeBtn = document.getElementById("themeBtn");
-
-        themeBtn.addEventListener("click", () => {
-
-            document.body.classList.toggle("light");
-
-            if (document.body.classList.contains("light")) {
-
-                themeBtn.textContent = "☀️";
-
-                localStorage.setItem("theme", "light");
-
-            } else {
-
-                themeBtn.textContent = "🌙";
-
-                localStorage.setItem("theme", "dark");
-
-            }
-
-        });
-
-
-        // LOAD SAVED THEME
-
-        if (localStorage.getItem("theme") === "light") {
-
-            document.body.classList.add("light");
-
-            themeBtn.textContent = "☀️";
-
-        }
-
-
-        // MOBILE MENU
-
-        const menuBtn = document.getElementById("menuBtn");
-        const navLinks = document.getElementById("navLinks");
-
-        menuBtn.addEventListener("click", () => {
-
-            navLinks.classList.toggle("active");
-
-        });
-
-
-        // CLOSE MOBILE MENU AFTER CLICK
-
-        document.querySelectorAll(".nav-links a").forEach(link => {
-
-            link.addEventListener("click", () => {
-
-                navLinks.classList.remove("active");
-
-            });
-
-        });
-
-
-        // TYPING EFFECT
-
-        const words = [
-            "Developer",
-            "Content Creator",
-            "Gamer",
-            "Student"
-        ];
-
-        let wordIndex = 0;
-        let charIndex = 0;
-        let deleting = false;
-
-        const typingText = document.getElementById("typingText");
-
-        function typeEffect() {
-
-            const currentWord = words[wordIndex];
-
-            if (!deleting) {
-
-                typingText.textContent =
-                    currentWord.substring(0, charIndex + 1);
-
-                charIndex++;
-
-                if (charIndex === currentWord.length) {
-
-                    deleting = true;
-
-                    setTimeout(typeEffect, 1200);
-
-                    return;
-                }
-
-            } else {
-
-                typingText.textContent =
-                    currentWord.substring(0, charIndex - 1);
-
-                charIndex--;
-
-                if (charIndex === 0) {
-
-                    deleting = false;
-
-                    wordIndex++;
-
-                    if (wordIndex === words.length) {
-                        wordIndex = 0;
-                    }
-
-                }
-
-            }
-
-            setTimeout(typeEffect, deleting ? 60 : 100);
-
-        }
-
-        typeEffect();
-
-    </script>
-
+// Expose small utilities for console testing.
+console.log('Moemen Gaming Hub ready');
+console.log('Use addGamePoints(100) to test global XP after choosing a username.');
+window.openGame=openGame;
+</script>
 </body>
-
 </html>
